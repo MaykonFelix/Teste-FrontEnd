@@ -1,0 +1,5 @@
+- request:
+    url: /api/pedido
+  method: GET
+  response:
+    file: jsons/pedidos.json

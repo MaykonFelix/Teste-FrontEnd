@@ -1,5 +1,8 @@
 # Teste-FrontEnd
  
-Criar React ( Html, CSS, Javascript )
+Criar React + Typescript + tailwindCss
 Criar Node
 Criar Mock "Stubby"
+
+
+stubby -d endpoints.yml

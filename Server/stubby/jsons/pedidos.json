@@ -1,0 +1,19 @@
+[
+    {
+        "fruta": [
+            "morango",
+            "banana",
+            "kiwi"
+        ],
+        "itens": [
+            "granola",
+            "pacoca",
+            "leiteNinho"
+        ],
+        "tamanho": [
+            "pequeno",
+            "medio",
+            "grande"
+        ]
+    }
+]
