@@ -21,8 +21,8 @@ Teste processo seletivo da empresa<br/>
 + ```cd Client```
 + ```npm run dev``` 
             ou 
-        ```yarn```
-        ```yarn dev```
+        + ```yarn```
+        + ```yarn dev```
 
 
 # Stubby ( Mock )
