@@ -20,9 +20,9 @@ Teste processo seletivo da empresa<br/>
 # ReactJS
 + ```cd Client```
 + ```npm run dev``` 
-            ou 
-        + ```yarn```
-        + ```yarn dev```
+ou 
++ ```yarn```
++ ```yarn dev```
 
 
 # Stubby ( Mock )
