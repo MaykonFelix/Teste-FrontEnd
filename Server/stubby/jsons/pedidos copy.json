@@ -1,0 +1,47 @@
+{
+    "fruta": [
+        {
+            "id": 1,
+            "fruta": "Morango"
+        },
+        {
+            "id": 2,
+            "fruta": "Banana"
+        },
+        {
+            "id": 1,
+            "fruta": "Kiwi"
+        }
+    ],
+    "complemento": [
+        {
+            "id": 1,
+            "complemento": "Granola"
+        },
+        {
+            "id": 2,
+            "complemento": "Paçoca"
+        },
+        {
+            "id": 3,
+            "complemento": "Leite Ninho"
+        }
+    ],
+    "tamanho": [
+        {
+            "id": 1,
+            "tamanho": "Pequeno",
+            "price": 10
+        },
+        {
+            "id": 2,
+            "tamanho": "Medio",
+            "price": 12
+        },
+        {
+            "id": 3,
+            "tamanho": "Grande",
+            "price": 15
+        }
+    ]
+}
