@@ -3,19 +3,12 @@ import "./App.css"
 import api from "./components/axios";
 import docTitle from "./components/Title";
 
-
-
-interface setType {
-  frutas: string;
-  items: string;
-  tamanho: string;
-}
-
 function App() {
 
   docTitle(); //Titulo Animado
 
   const [posts, setPosts] = useState([])
+  console.log(posts)
 
   const getPosts = async () => {
     try {
@@ -34,7 +27,6 @@ function App() {
   }, [])
 
 
-
   return (
     <>
       <div className="bg-slate-100 w-screen h-screen flex flex-col justify-center items-center">
@@ -49,14 +41,14 @@ function App() {
 
             {posts.length === 0 ?
               (<p>Carregando..</p>) :
-              (posts.map((post: setType) => (
+              (posts.map((post) => (
                 <div className="post" key={post.frutas.length}>
 
-                  <h1 className="">{post.frutas}</h1>
+                  <h1 className="">{post}</h1>
 
-                  <h2>{post.items}</h2>
+                  <h2>{post}</h2>
 
-                  <p>{post.tamanho}</p>
+                  <p>{post}</p>
 
                 </div>
               ))
