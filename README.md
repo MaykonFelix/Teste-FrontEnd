@@ -1,16 +1,15 @@
 # Teste-FrontEnd
- 
-Criar {
-    + React 
-    + Typescript 
-    + TailwindCss 
-    + Axios
-    }
+
 
 ## Acesso
 
 # ReactJS
-1º - 
+1º - ```cd Client```
+2º -  ```npm run dev``` 
+            ou 
+        ```yarn```
+        ```yarn dev```
+
 
 # Stubby ( Mock )
  
