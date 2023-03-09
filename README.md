@@ -1,6 +1,12 @@
 # Teste-FrontEnd
  
-Criar React + Typescript + tailwindCss
+Criar {
+    + React 
+    + Typescript 
+    + TailwindCss 
+    + Axios
+    }
+
 Criar Node
 Criar Mock "Stubby"
 
