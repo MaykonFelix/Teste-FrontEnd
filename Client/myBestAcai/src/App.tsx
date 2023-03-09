@@ -11,6 +11,16 @@ interface setType {
 
 function App() {
 
+  {
+    let docTitle = document.title;
+    window.addEventListener('blur', () => {
+      document.title = "Vai emborar ñ 😥";
+    });
+    window.addEventListener("focus", () => {
+      document.title = docTitle;
+    })
+  }
+
   const [posts, setPosts] = useState([])
 
   const getPosts = async () => {
@@ -39,10 +49,11 @@ function App() {
 
           <div className="home">
             <h1>Frutas:</h1>
+
             {posts.length === 0 ?
               (<p>Carregando..</p>) :
               (posts.map((post: setType) => (
-                <div className="post p-1" key={post.frutas.length}>
+                <div className="post" key={post.frutas.length}>
                   <h2 className="px-1">{post.frutas}</h2>
                   <h2>{post.items}</h2>
                   <p>{post.tamanho}</p>
