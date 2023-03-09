@@ -13,11 +13,9 @@ interface setType {
 
 function App() {
 
-  docTitle();
+  docTitle(); //Titulo Animado
 
   const [posts, setPosts] = useState([])
-
-  console.log(posts);
 
   const getPosts = async () => {
     try {
@@ -39,15 +37,14 @@ function App() {
 
   return (
     <>
-
-
       <div className="bg-slate-100 w-screen h-screen flex flex-col justify-center items-center">
         <div className="bg-pink-900 shadow-lg shadow-indigo-500/70 text-white/75 w-[35rem] h-[40rem] rounded-lg justify-center items-center flex flex-col">
-          <p >Faça seu Pedido</p>
 
-          <p>Escolha o<span> Sabor</span></p>
+
+
 
           <div className="home">
+
             <h1>Frutas:</h1>
 
             {posts.length === 0 ?
