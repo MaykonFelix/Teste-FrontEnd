@@ -16,8 +16,6 @@ Teste processo seletivo da empresa<br/>
 
 ## Acesso
 
-
-# ReactJS
 + `cd Client`
 + `npm run dev` 
 ou 
