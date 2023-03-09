@@ -8,14 +8,18 @@ function App() {
   docTitle(); //Titulo Animado
 
   const [posts, setPosts] = useState([])
-  console.log(posts)
+
+  console.log(posts);
 
   const getPosts = async () => {
     try {
       const response = await api.get('/api/pedido');
       const data = response.data;
 
-      setPosts(data);
+      const dataFinal = Object.values(data)
+
+      setPosts(dataFinal);
+
 
     } catch (error) {
       console.log(error)
@@ -39,10 +43,12 @@ function App() {
 
             <h1>Frutas:</h1>
 
-            {posts.length === 0 ?
+            {posts}
+
+            {/* {posts.length === 0 ?
               (<p>Carregando..</p>) :
               (posts.map((post) => (
-                <div className="post" key={post.frutas.length}>
+                <div className="post" key={post.length}>
 
                   <h1 className="">{post}</h1>
 
@@ -51,8 +57,11 @@ function App() {
                   <p>{post}</p>
 
                 </div>
+
               ))
-              )}
+              )} */}
+
+
           </div>
 
 
