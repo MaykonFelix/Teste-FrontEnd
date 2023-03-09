@@ -9,11 +9,7 @@ body {
     font-size: 1rem;
 }
 
-.home h1 {
-    /* text-transform: uppercase; */
-    text-align: center;
-    letter-spacing: 2px;
-}
+.home h1 {}
 
 .post {
     display: flex;
