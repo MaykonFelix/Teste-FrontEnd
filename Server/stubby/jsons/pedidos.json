@@ -1,14 +1,14 @@
 [
     {
-        "fruta": [
+        "frutas": [
             "morango",
             "banana",
-            "kiwi"
+            "Kiwi"
         ],
-        "itens": [
+        "items": [
             "granola",
             "pacoca",
-            "leiteNinho"
+            "leite ninho"
         ],
         "tamanho": [
             "pequeno",

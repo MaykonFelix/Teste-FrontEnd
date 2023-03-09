@@ -1,9 +1,13 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
-import "./app.css"
+import "./App.css"
 
 
-
+interface setType {
+  frutas: string;
+  items: string;
+  tamanho: string;
+}
 
 function App() {
 
@@ -23,16 +27,29 @@ function App() {
     getPosts()
   }, [])
 
-  console.log(posts);
 
 
   return (
     <>
       <div className="bg-slate-100 w-screen h-screen flex flex-col justify-center items-center">
-        <div className="bg-indigo-500 shadow-lg shadow-indigo-500/50 text-white/75 w-[35rem] h-[40rem] rounded-lg justify-center items-center flex flex-col">
-          <p>Faça seu Pedido</p>
+        <div className="bg-pink-900 shadow-lg shadow-indigo-500/70 text-white/75 w-[35rem] h-[40rem] rounded-lg justify-center items-center flex flex-col">
+          <p >Faça seu Pedido</p>
 
           <p>Escolha o<span> Sabor</span></p>
+
+          <div className="home">
+            <h1>Frutas:</h1>
+            {posts.length === 0 ?
+              (<p>Carregando..</p>) :
+              (posts.map((post: setType) => (
+                <div className="post p-1" key={post.frutas.length}>
+                  <h2 className="px-1">{post.frutas}</h2>
+                  <h2>{post.items}</h2>
+                  <p>{post.tamanho}</p>
+                </div>
+              ))
+              )}
+          </div>
 
 
         </div>
