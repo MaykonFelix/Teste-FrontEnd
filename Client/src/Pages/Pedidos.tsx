@@ -38,7 +38,7 @@ function Pedidos() {
         <>
             <div className="bg-slate-100 w-screen h-screen flex flex-col justify-center items-center">
 
-                <div className="shadow-lg shadow-sky-500/30 hover:bg-sky-200/20 duration-500 text-white w-[35rem] h-screen rounded-lg m-2 justify-center items-center flex flex-col">
+                <div className="shadow-lg shadow-pink-500/30 hover:bg-pink-200/20 duration-500 text-white w-[35rem] h-screen rounded-lg m-2 justify-center items-center flex flex-col">
 
                     <Box sx={{ width: '60%' }}>
                         <Stepper activeStep={0} alternativeLabel>
@@ -63,7 +63,7 @@ function Pedidos() {
                                 )))}
                         </div>
 
-                        <h1 className="uppercase tracking-widest text-slate-500">Recheio:</h1>
+                        {/* <h1 className="uppercase tracking-widest text-slate-500">Recheio:</h1>
                         <div className="flex justify-center mb-2">
                             {posts.length === 0 ?
                                 (<p>Carregando..</p>) :
@@ -86,10 +86,10 @@ function Pedidos() {
                                     </div>
                                 )))}
 
-                        </div>
+                        </div> */}
 
                         <form>
-                            <h1 className="uppercase tracking-widest text-slate-500 p-4 mb-8">Escolha uma Fruta 🍓</h1>
+                            <h1 className="uppercase tracking-widest text-slate-500 border-b-2 border-pink-500 pt-8 mb-8 text-lg">Escolha uma Fruta 🍓</h1>
                             <div className="flex gap-4 justify-around ">
 
 
@@ -108,9 +108,8 @@ function Pedidos() {
 
                             </div>
 
-                            <h1 className="uppercase tracking-widest text-slate-500 pt-4 mb-8">Adicione Recheio 🍫</h1>
+                            <h1 className="uppercase tracking-widest text-slate-500 border-b-2 border-pink-500 pt-8 mb-8 text-lg">Adicione Recheio 🍫</h1>
                             <div className="flex gap-4 justify-around ">
-
 
                                 <label className="btn1 cursor-pointer w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
                                     <input name="recheio" type="radio" value="granola" hidden /><p className="h-[3rem] flex flex-col justify-center">Granola</p>
@@ -126,9 +125,8 @@ function Pedidos() {
 
                             </div>
 
-                            <h1 className="uppercase tracking-widest text-slate-500 m-8">Escolha o Tamanho 🥛</h1>
+                            <h1 className="uppercase tracking-widest text-slate-500 border-b-2 border-pink-500 pt-8 mb-8 text-lg">Escolha o Tamanho 🥛</h1>
                             <div className="flex gap-4 justify-around ">
-
 
 
                                 <label className="btn1 cursor-pointer w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
