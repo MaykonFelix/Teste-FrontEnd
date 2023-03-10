@@ -4,10 +4,6 @@ import api from "./components/axios";
 import docTitle from "./components/Title";
 
 
-import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete'
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -115,14 +111,7 @@ function App() {
             </div>
 
           </div>
-          <div>
-            <IconButton aria-label="delete">
-              <DeleteIcon />
-            </IconButton>
-            <IconButton color="primary" aria-label="add to shopping cart">
-              <AddShoppingCartIcon />
-            </IconButton>
-          </div>
+
 
         </div>
       </div>
