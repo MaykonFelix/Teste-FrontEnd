@@ -8,22 +8,3 @@ body {
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 1rem;
 }
-
-.home h1 {}
-
-.post {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1.5rem;
-    padding: 1.5rem;
-    border-bottom: 1px solid #777;
-}
-
-.post h2,
-.post p {
-    margin-bottom: 1rem;
-}
-
-.post h2::first-letter {
-    text-transform: uppercase;
-}

@@ -45,26 +45,29 @@ function App() {
 
   return (
     <>
-
+      <div className="bg-slate-100 w-screen mt-2 flex flex-col justify-center items-center">
+        <Box sx={{ width: '50%' }}>
+          <Stepper activeStep={0} alternativeLabel>
+            {steps.map((label) => (
+              <Step key={label}>
+                <StepLabel>{label}</StepLabel>
+              </Step>
+            ))}
+          </Stepper>
+        </Box>
+      </div>
 
       <div className="bg-slate-100 w-screen h-screen flex flex-col justify-center items-center">
 
-        <div className="shadow-lg shadow-sky-500/30 text-white/75 w-[35rem] h-screen rounded-lg justify-center items-center flex flex-col">
-
-          <Box sx={{ width: '60%' }}>
-            <Stepper activeStep={0} alternativeLabel>
-              {steps.map((label) => (
-                <Step key={label}>
-                  <StepLabel>{label}</StepLabel>
-                </Step>
-              ))}
-            </Stepper>
-          </Box>
 
 
-          <div className="home flex text-center flex-col gap-2 p-12">
+        <div className="bg-pink-900 shadow-lg shadow-indigo-500/70 text-white/75 w-[35rem] h-[40rem] rounded-lg justify-center items-center flex flex-col">
 
-            <h1 className="uppercase tracking-widest text-slate-500">Escolha a Fruta:</h1>
+
+
+          <div className="home flex text-center flex-col gap-2">
+
+            <h1 className="uppercase tracking-widest">Escolha a Fruta:</h1>
             <div className="flex justify-center mb-2">
               {posts.length === 0 ?
                 (<p>Carregando..</p>) :
@@ -75,7 +78,7 @@ function App() {
                 )))}
             </div>
 
-            <h1 className="uppercase tracking-widest text-slate-500">Recheio:</h1>
+            <h1 className="uppercase tracking-widest ">Recheio:</h1>
             <div className="flex justify-center mb-2">
               {posts.length === 0 ?
                 (<p>Carregando..</p>) :
@@ -87,7 +90,7 @@ function App() {
                 )))}
             </div>
 
-            <h1 className="uppercase tracking-widest text-slate-500">Tamanho:</h1>
+            <h1 className="uppercase tracking-widest ">Tamanho:</h1>
             <div className="flex justify-center mb-2">
               {posts.length === 0 ?
                 (<p>Carregando..</p>) :
@@ -98,11 +101,13 @@ function App() {
                   </div>
                 )))}
 
+
+
             </div>
 
 
             <div className="flex m-2 p-2 gap-4 justify-center">
-              <button className="hover:text-pink-400 text-slate-500">Finalizar Pedido</button>
+              <button className="hover:text-pink-400">Finalizar Pedido</button>
             </div>
 
           </div>
