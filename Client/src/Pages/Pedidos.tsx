@@ -89,7 +89,7 @@ function Pedidos() {
                         </div>
 
                         <form>
-                            <h1 className="uppercase tracking-widest text-slate-500 mb-4">Escolha uma Fruta 🍓</h1>
+                            <h1 className="uppercase tracking-widest text-slate-500 p-4 mb-8">Escolha uma Fruta 🍓</h1>
                             <div className="flex gap-4 justify-around ">
 
 
@@ -108,7 +108,7 @@ function Pedidos() {
 
                             </div>
 
-                            <h1 className="uppercase tracking-widest text-slate-500 mb-4">Adicione Recheio 🍫</h1>
+                            <h1 className="uppercase tracking-widest text-slate-500 pt-4 mb-8">Adicione Recheio 🍫</h1>
                             <div className="flex gap-4 justify-around ">
 
 
@@ -126,17 +126,17 @@ function Pedidos() {
 
                             </div>
 
-                            <h1 className="uppercase tracking-widest text-slate-500 mb-4">Escolha o Tamanho 🍓</h1>
+                            <h1 className="uppercase tracking-widest text-slate-500 m-8">Escolha o Tamanho 🍓</h1>
                             <div className="flex gap-4 justify-around ">
 
 
 
                                 <label className="btn1 cursor-pointer w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
-                                    <input name="tamanho" type="radio" value="prequeno" hidden /><p className="h-[3rem] flex flex-col justify-center">Pequeno</p>
+                                    <input name="tamanho" type="radio" value="prequeno" hidden /><p className="h-[3rem] flex flex-col justify-center"><span>Pequeno</span> R$ 10,00</p>
                                 </label>
 
                                 <label className="btn1 cursor-pointer w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
-                                    <input name="tamanho" type="radio" value="medio" hidden /><p className="h-[3rem] flex flex-col justify-center">Médio</p>
+                                    <input name="tamanho" type="radio" value="medio" hidden /><p className="h-[3rem] flex flex-col justify-center"><span>Médio</span> R$ 12,00</p>
                                 </label>
 
                                 <label className="btn1 cursor-pointer w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
