@@ -1,0 +1,5 @@
+label input:checked+p {
+    border: none;
+    outline: 2px solid deeppink;
+    border-radius: 0.75rem;
+}
