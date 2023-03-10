@@ -89,18 +89,59 @@ function Pedidos() {
                         </div>
 
                         <form>
+                            <h1 className="uppercase tracking-widest text-slate-500 mb-4">Escolha uma Fruta 🍓</h1>
                             <div className="flex gap-4 justify-around ">
 
-                                <label className="btn1 w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
-                                    <input name="origin" type="radio" value=",morango" hidden /><p className="h-[3rem] flex flex-col justify-center">Morango</p>
+
+
+                                <label className="btn1 cursor-pointer w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
+                                    <input name="fruta" type="radio" value="morango" hidden /><p className="h-[3rem] flex flex-col justify-center">Morango</p>
                                 </label>
 
-                                <label className="btn1 w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
-                                    <input name="origin" type="radio" value="banana" hidden /><p className="h-[3rem] flex flex-col justify-center">Banana</p>
+                                <label className="btn1 cursor-pointer w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
+                                    <input name="fruta" type="radio" value="banana" hidden /><p className="h-[3rem] flex flex-col justify-center">Banana</p>
                                 </label>
 
-                                <label className="btn1 w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
-                                    <input name="origin" type="radio" value="kiwi" hidden /><p className="h-[3rem] flex flex-col justify-center">Kiwi</p>
+                                <label className="btn1 cursor-pointer w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
+                                    <input name="fruta" type="radio" value="kiwi" hidden /><p className="h-[3rem] flex flex-col justify-center">Kiwi</p>
+                                </label>
+
+                            </div>
+
+                            <h1 className="uppercase tracking-widest text-slate-500 mb-4">Adicione Recheio 🍫</h1>
+                            <div className="flex gap-4 justify-around ">
+
+
+                                <label className="btn1 cursor-pointer w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
+                                    <input name="recheio" type="radio" value="granola" hidden /><p className="h-[3rem] flex flex-col justify-center">Granola</p>
+                                </label>
+
+                                <label className="btn1 cursor-pointer w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
+                                    <input name="recheio" type="radio" value="pacoca" hidden /><p className="h-[3rem] flex flex-col justify-center">Paçoca</p>
+                                </label>
+
+                                <label className="btn1 cursor-pointer w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
+                                    <input name="recheio" type="radio" value="leiteNinho" hidden /><p className="h-[3rem] flex flex-col justify-center">Leite Ninho</p>
+                                </label>
+
+                            </div>
+
+                            <h1 className="uppercase tracking-widest text-slate-500 mb-4">Escolha o Tamanho 🍓</h1>
+                            <div className="flex gap-4 justify-around ">
+
+
+
+                                <label className="btn1 cursor-pointer w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
+                                    <input name="tamanho" type="radio" value="prequeno" hidden /><p className="h-[3rem] flex flex-col justify-center">Pequeno</p>
+                                </label>
+
+                                <label className="btn1 cursor-pointer w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
+                                    <input name="tamanho" type="radio" value="medio" hidden /><p className="h-[3rem] flex flex-col justify-center">Médio</p>
+                                </label>
+
+                                <label className="btn1 cursor-pointer w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
+                                    <input name="tamanho" type="radio" value="grande" hidden /><p className="h-[3rem] flex flex-col justify-center"><span>Grande</span> R$ 15,00</p>
+
                                 </label>
 
                             </div>
@@ -109,7 +150,7 @@ function Pedidos() {
                         <div className="flex m-2 p-2 gap-4 justify-center">
                             <button className="bg-sky-500 w-[8rem] h-[2.5rem] rounded-xl hover:text-sky-500 hover:bg-white text-slate-500 text-white">Realizar Pedido</button>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

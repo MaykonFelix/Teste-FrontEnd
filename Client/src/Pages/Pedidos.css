@@ -1,5 +1,6 @@
 label input:checked+p {
     border: none;
-    outline: 2px solid deeppink;
+    background-color: #ff0080;
     border-radius: 0.75rem;
+    color: aliceblue;
 }
