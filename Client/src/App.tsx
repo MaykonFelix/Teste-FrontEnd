@@ -17,6 +17,9 @@ const steps = [
 ];
 
 
+
+
+
 function App() {
 
   docTitle(); //Titulo Animado
@@ -49,7 +52,7 @@ function App() {
 
       <div className="bg-slate-100 w-screen h-screen flex flex-col justify-center items-center">
 
-        <div className="shadow-lg shadow-sky-500/30 text-white/75 w-[35rem] h-screen rounded-lg justify-center items-center flex flex-col">
+        <div className="shadow-lg shadow-sky-500/30 hover:bg-sky-200/20 duration-500 text-white/75 w-[35rem] h-screen rounded-lg m-2 justify-center items-center flex flex-col">
 
           <Box sx={{ width: '60%' }}>
             <Stepper activeStep={0} alternativeLabel>
@@ -88,13 +91,13 @@ function App() {
             </div>
 
             <h1 className="uppercase tracking-widest text-slate-500">Tamanho:</h1>
-            <div className="flex justify-center mb-2">
+            <div className="flex justify-center mb-2 ">
               {posts.length === 0 ?
                 (<p>Carregando..</p>) :
                 (posts.tamanho.map((post, index) => (
-                  <div key={index}>
-                    <p className="bg-pink-500 m-2 w-[6rem] h-[3rem]  hover:bg-pink-600 cursor-pointer flex items-center justify-center rounded-xl" >{post.tamanho}</p>
-                    <p className="bg-pink-500 m-2 w-[6rem] h-[3rem]  hover:bg-pink-600 cursor-pointer flex items-center justify-center rounded-xl after:content-[',00'] after:ml-0.5 before:content-['R$']" >{post.price}</p>
+                  <div className="bg-pink-500 m-2 w-[6rem] h-[3rem]  hover:bg-pink-600 cursor-pointer flex flex-col items-center justify-center rounded-xl" key={index}>
+                    <p className="" >{post.tamanho}</p>
+                    <span className=" after:content-[',00'] before:content-['R$']"> {post.price}</span>
                   </div>
                 )))}
 
@@ -102,7 +105,7 @@ function App() {
 
 
             <div className="flex m-2 p-2 gap-4 justify-center">
-              <button className="hover:text-pink-400 text-slate-500">Finalizar Pedido</button>
+              <button className="bg-sky-500 w-[8rem] h-[2.5rem] rounded-xl hover:text-sky-500 hover:bg-white text-slate-500 text-slate-100">Realizar Pedido</button>
             </div>
 
           </div>
