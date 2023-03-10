@@ -126,7 +126,7 @@ function Pedidos() {
 
                             </div>
 
-                            <h1 className="uppercase tracking-widest text-slate-500 m-8">Escolha o Tamanho 🍓</h1>
+                            <h1 className="uppercase tracking-widest text-slate-500 m-8">Escolha o Tamanho 🥛</h1>
                             <div className="flex gap-4 justify-around ">
 
 
