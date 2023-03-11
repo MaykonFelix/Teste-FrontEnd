@@ -78,7 +78,7 @@ function Pedidos() {
                         </div>
 
                         <div className="flex m-2 p-2 gap-4 justify-center">
-                            <button className="bg-sky-500 w-[8rem] h-[2.5rem] rounded-xl hover:text-sky-500 hover:bg-white text-slate-500 text-white">Realizar Pedido</button>
+                            <button className="bg-sky-500 w-[8rem] h-[2.5rem] rounded-xl hover:text-sky-500 hover:bg-white  text-white">Realizar Pedido</button>
                         </div>
 
                     </div>
