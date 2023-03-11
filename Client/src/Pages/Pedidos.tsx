@@ -84,7 +84,7 @@ function Pedidos() {
                                 (<p>Carregando..</p>) :
                                 (posts.tamanho.map((post, index) => (
                                     <label key={index} className="btn1 cursor-pointer w-[6rem] hover:bg-pink-500 rounded-xl text-sky-500 hover:text-white flex flex-col align-center">
-                                        <input name="tamanho" type="radio" value={post.tamanho} hidden /><p className="h-[3rem] flex flex-col justify-center"><span>{post.tamanho}</span>R${post.price}</p>
+                                        <input name="tamanho" type="radio" value={post.tamanho} hidden /><p className="h-[3rem] flex flex-col justify-center"><span>{post.tamanho}</span><p>R${post.price}</p></p>
                                     </label>
                                 )))}
                         </div>
