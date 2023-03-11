@@ -1,19 +1,11 @@
 import { useEffect, useState } from "react";
 import api from "../components/axios";
 
-import Box from '@mui/material/Box';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
 
 import './Pedidos.css'
+import { Link } from "react-router-dom";
 
 
-const steps = [
-    'Pedido',
-    'Preparando',
-    'Finalizado',
-];
 
 function Pedidos() {
 
@@ -36,19 +28,15 @@ function Pedidos() {
 
     return (
         <>
+
+            <div className="flex gap-4 w-screen justify-center text-center bg-slate-500 text-white">
+                <Link to="/"> <p>Home</p> </Link>
+                <Link to="/preparando"> <p>Preparando</p> </Link>
+            </div>
+
             <div className="bg-slate-100 w-screen h-screen flex flex-col justify-center items-center">
 
-                <div className="shadow-lg shadow-pink-500/30 hover:bg-pink-200/20 duration-500 text-white w-[35rem] h-screen rounded-lg m-2 justify-center items-center flex flex-col">
-
-                    <Box sx={{ width: '60%' }}>
-                        <Stepper activeStep={0} alternativeLabel>
-                            {steps.map((label) => (
-                                <Step key={label}>
-                                    <StepLabel>{label}</StepLabel>
-                                </Step>
-                            ))}
-                        </Stepper>
-                    </Box>
+                <div className="shadow-lg shadow-pink-500/30 hover:bg-pink-200/20 duration-500 text-slate-500 w-[35rem] h-screen rounded-lg m-2 justify-center items-center flex flex-col">
 
                     <div className="home flex text-center flex-col gap-2 p-12">
 

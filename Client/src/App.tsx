@@ -1,9 +1,8 @@
 import "./App.css"
 import docTitle from "./components/Title";
-import Pedidos from "./Pages/Pedidos";
 
 
-
+import { Rotas } from "./routes";
 
 
 function App() {
@@ -11,7 +10,9 @@ function App() {
   docTitle(); //Titulo Animado
 
   return (
-    <Pedidos />
+    <>
+      <Rotas />
+    </>
   )
 }
 
