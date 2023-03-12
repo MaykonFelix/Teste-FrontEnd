@@ -29,6 +29,7 @@ export default function Preparando() {
         const fruit = fruits.find(fruit => fruit.id === id)
 
         const alreadyInShoppingCart = shoppingCart.find(item => item.produto.id === id)
+        console.log(alreadyInShoppingCart)
 
         // if fruit is not already in the shopping cart
         const cartItem: IShoppingCartItem = {
