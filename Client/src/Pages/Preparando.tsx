@@ -24,10 +24,13 @@ const fruits: IFruits[] = [
 export default function Preparando() {
 
     const [shoppingCart, setShoppingCart] = useState<IShoppingCartItem[]>([]);
-    console.log(setShoppingCart)
 
     const handleAddToCart = (id: number) => {
         const fruit = fruits.find(fruit => fruit.id === id)
+
+        const alreadyInShoppingCart = shoppingCart.find(item => item.produto.id === id)
+
+        // if fruit is not already in the shopping cart
         const cartItem: IShoppingCartItem = {
             produto: fruit!,
             quantidade: 1,
