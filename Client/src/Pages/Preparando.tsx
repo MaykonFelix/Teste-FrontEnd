@@ -154,24 +154,18 @@ export default function Preparando() {
                    size: shoppingCartSizeCup!,
                }; */
 
-        const orderCarts = [
-            shoppingCartFruit!,
-            shoppingCartComplement!,
-            shoppingCartSizeCup!,
-        ];
+        const cartItem = {
+            fruit: shoppingCartFruit!,
+            complement: shoppingCartComplement!,
+            sizaCup: shoppingCartSizeCup!,
+        };
+
         // Adicionar o Item
-        const newOrderCart = [...orderCart, orderCarts];
+        const newOrderCart = [...orderCart, cartItem];
         setOrderCart(newOrderCart);
-        console.log(newOrderCart)
-
-        return
-
-        shoppingCartFruit.length = 0;
-        shoppingCartComplement.length = 0;
-        shoppingCartSizeCup.length = 0;
     };
 
-
+    // Remove --------------------
     /*     
         const handleRemoveToCart = (id: number) => {
             const alreadyInshoppingCartFruit = shoppingCartFruit.find(item => item.produto.id === id);
@@ -276,6 +270,7 @@ export default function Preparando() {
                                 <p
                                     key={crypto.randomUUID()}>
                                     {item.produto.name} R$ {item.produto.price}
+                                    {console.log(item)}
                                 </p>
                             ))}
                         </ul>
@@ -290,6 +285,13 @@ export default function Preparando() {
 
                     </div>
 
+
+                    <h1 className="pt-8 text-pink-700">Ordem de Pedidos</h1>
+                    <div className="flex gap-5">
+                        <ul>
+
+                        </ul>
+                    </div>
 
 
                     {/* Preparando o Pedido */}
