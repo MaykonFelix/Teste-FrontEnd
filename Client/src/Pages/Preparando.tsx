@@ -5,9 +5,17 @@ import { Link } from "react-router-dom";
 
 interface IFruits {
     id: number,
-    nome: string,
-    price: number
+    name: string,
 };
+interface Icomplement {
+    id: number,
+    name: string,
+};
+interface IFruits {
+    id: number,
+    name: string,
+};
+
 
 interface IShoppingCartItem {
     produto: IFruits
@@ -15,9 +23,21 @@ interface IShoppingCartItem {
 };
 
 const fruits: IFruits[] = [
-    { id: 1, nome: "Morango", price: 10 },
-    { id: 2, nome: "Banana", price: 12 },
-    { id: 3, nome: "Kiwi", price: 12 }
+    { id: 1, name: "Morango" },
+    { id: 2, name: "Banana" },
+    { id: 3, name: "Kiwi" }
+];
+
+const complement: IFruits[] = [
+    { id: 1, name: "Granola" },
+    { id: 2, name: "Paçoca" },
+    { id: 3, name: "Leite Ninho" }
+];
+
+const sizeCup: IFruits[] = [
+    { id: 1, name: "Morango", price: 10 },
+    { id: 2, name: "Banana", price: 12 },
+    { id: 3, name: "Kiwi", price: 12 }
 ];
 
 
@@ -26,21 +46,52 @@ export default function Preparando() {
     const [shoppingCart, setShoppingCart] = useState<IShoppingCartItem[]>([]);
 
     const handleAddToCart = (id: number) => {
-        const fruit = fruits.find(fruit => fruit.id === id)
+        const fruit = fruits.find(fruit => fruit.id === id);
 
-        const alreadyInShoppingCart = shoppingCart.find(item => item.produto.id === id)
-        console.log(alreadyInShoppingCart)
+        // --- Abaixo Confere se é repetido o Item
+        const alreadyInShoppingCart = shoppingCart.find(item => item.produto.id === id);
 
-        // if fruit is not already in the shopping cart
+        if (alreadyInShoppingCart) {
+            const newShoppingCart: IShoppingCartItem[] = shoppingCart.map(item => {
+                if (item.produto.id === id) ({
+                    ...item,
+                    quantidade: item.quantidade++,
+                });
+                return item;
+            });
+            setShoppingCart(newShoppingCart);
+            return;
+        };
+
+        // if fruit is not already in the shopping cart --- Abaixo Adicionar o Item
         const cartItem: IShoppingCartItem = {
             produto: fruit!,
             quantidade: 1,
-        }
-        const newShoppingCart: IShoppingCartItem[] = [...shoppingCart, cartItem]
-        setShoppingCart(newShoppingCart)
+        };
+        const newShoppingCart: IShoppingCartItem[] = [...shoppingCart, cartItem];
+        setShoppingCart(newShoppingCart);
     };
 
-    const handleRemoveToCart = (id: number) => { };
+    const handleRemoveToCart = (id: number) => {
+        const alreadyInShoppingCart = shoppingCart.find(item => item.produto.id === id);
+
+        if (alreadyInShoppingCart!.quantidade > 1) {
+            const newShoppingCart: IShoppingCartItem[] = shoppingCart.map(item => {
+                if (item.produto.id === id) ({
+                    ...item,
+                    quantidade: item.quantidade--,
+                });
+                return item;
+            });
+            setShoppingCart(newShoppingCart);
+            return;
+        };
+
+        // if there is only one item with the id in the cart
+        const newShoppingCart: IShoppingCartItem[] = shoppingCart.filter(item => item.produto.id !== id);
+        setShoppingCart(newShoppingCart);
+
+    };
 
 
     return (
@@ -60,12 +111,9 @@ export default function Preparando() {
 
                     <ul>
                         {fruits.map((fruit) => (
-                            <div key={fruit.id}>
+                            <div key={crypto.randomUUID()}>
                                 <li className="flex p-2 gap-4">
-                                    <p>{fruit.nome}</p>
-                                    <p>R$ {fruit.price},00</p>
-                                    <button onClick={() => handleAddToCart(fruit.id)}>+</button>
-
+                                    <button onClick={() => handleAddToCart(fruit.id)}>{fruit.name}</button>
                                 </li>
                             </div>
                         ))}
@@ -75,9 +123,22 @@ export default function Preparando() {
 
                     <ul>
                         {shoppingCart.map((item) => (
-                            <div key={item.produto.id}>
+                            <div key={crypto.randomUUID()}>
                                 <li className="flex p-2 gap-4">
-                                    <p>Fruta: {item.produto.nome}</p>
+                                    <p>Fruta:{item.produto.name}</p>
+                                    <p>Quantos: {item.quantidade}x</p>
+                                    <p>Valor: R${item.produto.price},00</p>
+                                    <p>Total: R${item.quantidade * item.produto.price},00</p>
+
+                                    <button onClick={() => handleRemoveToCart(item.produto.id)}>Remove</button>
+                                </li>
+                            </div>
+                        ))}
+                    </ul>
+                    <ul>
+                        {shoppingCart.map((item) => (
+                            <div key={crypto.randomUUID()}>
+                                <li className="flex p-2 gap-4">
                                     <p>Quantos: {item.quantidade}x</p>
                                     <p>Valor: R${item.produto.price},00</p>
                                     <p>Total: R${item.quantidade * item.produto.price},00</p>
