@@ -2,14 +2,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-
 // Tipagem Inicial
 /* interface IshoppingCartFruitItem {
     produto: IFruits
     quantidade: number
 }; */
 
-
+// Tipagem -------------------------
 interface IFruits {
     id: number,
     name: string,
@@ -24,13 +23,11 @@ interface IsizeCup {
     price: number,
 };
 
-interface IshoppingCartFruitItem {
-    produto: IFruits
-};
-interface shoppingCartComplement {
+interface IshoppingCartItem {
     produto: IFruits
 };
 
+// Dados --------------------------
 const fruits: IFruits[] = [
     { id: 1, name: "Morango" },
     { id: 2, name: "Banana" },
@@ -48,8 +45,9 @@ const sizeCups: IsizeCup[] = [
     { id: 2, name: "Médio", price: 12 },
     { id: 3, name: "Grande", price: 12 }
 ];
+// Final Dados --------------------------
 
-
+//Inicio Aplicação ----------------------
 export default function Preparando() {
     // Função inicial
     /* 
@@ -103,19 +101,24 @@ export default function Preparando() {
         };
      */
 
-    const [shoppingCartFruit, setshoppingCartFruit] = useState<IshoppingCartFruitItem[]>([]);
-    const [shoppingCartComplement, setShoppingCartComplement] = useState<shoppingCartComplement[]>([]);
-    const [shoppingCartSizeCup, setShoppingCartSizeCup] = useState<shoppingCartComplement[]>([]);
+    // useState --------------------------
+    const [shoppingCartFruit, setshoppingCartFruit] = useState<IshoppingCartItem[]>([]);
+    const [shoppingCartComplement, setShoppingCartComplement] = useState<IshoppingCartItem[]>([]);
+    const [shoppingCartSizeCup, setShoppingCartSizeCup] = useState<IshoppingCartItem[]>([]);
+    const [orderCart, setOrderCart] = useState<IshoppingCartItem[]>([]);
+    // Final useState --------------------------
 
-
+    // Adicionando itens a Sacola -----------------------
     const handleAddFruit = (id: number) => {
         // --- Procura pelo id a fruta escolhida
         const fruit = fruits.find(fruit => fruit.id === id);
+
         // Adicionar o Item
-        const cartItem: IshoppingCartFruitItem = {
+        const cartItem: IshoppingCartItem = {
             produto: fruit!,
         };
-        const newshoppingCartFruit: IshoppingCartFruitItem[] = [cartItem];
+
+        const newshoppingCartFruit: IshoppingCartItem[] = [cartItem];
         setshoppingCartFruit(newshoppingCartFruit);
     };
 
@@ -123,10 +126,10 @@ export default function Preparando() {
         // --- Procura pelo id a fruta escolhida
         const complement = complements.find(complement => complement.id === id);
         // Adicionar o Item
-        const cartItem: shoppingCartComplement = {
+        const cartItem: IshoppingCartItem = {
             produto: complement!,
         };
-        const newshoppingCartComplement: shoppingCartComplement[] = [cartItem];
+        const newshoppingCartComplement: IshoppingCartItem[] = [cartItem];
         setShoppingCartComplement(newshoppingCartComplement);
     };
 
@@ -134,37 +137,63 @@ export default function Preparando() {
         // --- Procura pelo id a fruta escolhida
         const sizeCup = sizeCups.find(sizeCup => sizeCup.id === id);
         // Adicionar o Item
-        const cartItem: shoppingCartComplement = {
+        const cartItem: IshoppingCartItem = {
             produto: sizeCup!,
         };
-        const newshoppingCartSizeCup: shoppingCartComplement[] = [cartItem];
+        const newshoppingCartSizeCup: IshoppingCartItem[] = [cartItem];
         setShoppingCartSizeCup(newshoppingCartSizeCup);
     };
+    // Final Adicionando itens a Sacola-----------------------
 
 
+    const handleAddCart = () => {
+        // --- Procura pelo id a fruta escolhida
+        /*        const orderCarts = {
+                   fruit: shoppingCartFruit!,
+                   complement: shoppingCartComplement!,
+                   size: shoppingCartSizeCup!,
+               }; */
 
+        const orderCarts = [
+            shoppingCartFruit!,
+            shoppingCartComplement!,
+            shoppingCartSizeCup!,
+        ];
+        // Adicionar o Item
+        const newOrderCart = [...orderCart, orderCarts];
+        setOrderCart(newOrderCart);
+        console.log(newOrderCart)
 
-    const handleRemoveToCart = (id: number) => {
-        const alreadyInshoppingCartFruit = shoppingCartFruit.find(item => item.produto.id === id);
+        return
 
-        if (alreadyInshoppingCartFruit!.quantidade > 1) {
-            const newshoppingCartFruit: IshoppingCartFruitItem[] = shoppingCartFruit.map(item => {
-                if (item.produto.id === id) ({
-                    ...item,
-                    quantidade: item.quantidade--,
-                });
-                return item;
-            });
-            setshoppingCartFruit(newshoppingCartFruit);
-            return;
-        };
-
-        // if there is only one item with the id in the cart
-        const newshoppingCartFruit: IshoppingCartFruitItem[] = shoppingCartFruit.filter(item => item.produto.id !== id);
-        setshoppingCartFruit(newshoppingCartFruit);
-
+        shoppingCartFruit.length = 0;
+        shoppingCartComplement.length = 0;
+        shoppingCartSizeCup.length = 0;
     };
 
+
+    /*     
+        const handleRemoveToCart = (id: number) => {
+            const alreadyInshoppingCartFruit = shoppingCartFruit.find(item => item.produto.id === id);
+    
+            if (alreadyInshoppingCartFruit!.quantidade > 1) {
+                const newshoppingCartFruit: IshoppingCartFruitItem[] = shoppingCartFruit.map(item => {
+                    if (item.produto.id === id) ({
+                        ...item,
+                        quantidade: item.quantidade--,
+                    });
+                    return item;
+                });
+                setshoppingCartFruit(newshoppingCartFruit);
+                return;
+            };
+    
+            // if there is only one item with the id in the cart
+            const newshoppingCartFruit: IshoppingCartFruitItem[] = shoppingCartFruit.filter(item => item.produto.id !== id);
+            setshoppingCartFruit(newshoppingCartFruit);
+    
+        };
+     */
 
 
     return (
@@ -227,18 +256,37 @@ export default function Preparando() {
                     <h1 className="pt-8 text-pink-700">Pedido</h1>
                     <div className="flex gap-5">
                         <ul>
-                            {shoppingCartFruit.map((item) => (<p key={crypto.randomUUID()}>{item.produto.name}</p>))}
+                            {shoppingCartFruit.map((item) => (
+                                <p
+                                    key={crypto.randomUUID()}>
+                                    {item.produto.name}
+                                </p>
+                            ))}
                         </ul>
-
                         <ul>
-                            {shoppingCartComplement.map((item) => (<p key={crypto.randomUUID()}>{item.produto.name}</p>))}
-
+                            {shoppingCartComplement.map((item) => (
+                                <p
+                                    key={crypto.randomUUID()}>
+                                    {item.produto.name}
+                                </p>
+                            ))}
                         </ul>
-
                         <ul>
-                            {shoppingCartSizeCup.map((item) => (<p key={crypto.randomUUID()}>{item.produto.name} R$ {item.produto.price}</p>))}
-
+                            {shoppingCartSizeCup.map((item) => (
+                                <p
+                                    key={crypto.randomUUID()}>
+                                    {item.produto.name} R$ {item.produto.price}
+                                </p>
+                            ))}
                         </ul>
+
+                        <button
+                            className="bg-pink-500 hover:bg-pink-600 text-white w-[5rem] rounded-xl "
+                            key={crypto.randomUUID()}
+                            onClick={() => handleAddCart()}>
+                            Finalizar
+                        </button>
+
 
                     </div>
 
