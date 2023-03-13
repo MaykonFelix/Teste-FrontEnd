@@ -9,13 +9,10 @@ import Paginafinal from "./pages/pagefinal"
 import axios from "axios";
 
 
-
-
 export default function Principal() {
 
     //Importação API ----------------------
     const [posts, setPosts] = useState([])
-
 
     const getPosts = async () => {
         try {
@@ -28,6 +25,7 @@ export default function Principal() {
             console.log(error)
         };
     };
+
     useEffect(() => {
         getPosts()
     }, [])
