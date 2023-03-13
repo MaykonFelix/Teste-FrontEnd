@@ -1,8 +1,10 @@
 
+import { useState } from "react";
+
+
 import Frutas from "./pages/frutas"
 import Tamanho from "./pages/tamanho"
 import Complemento from "./pages/complemento"
-import { useState } from "react";
 
 
 
@@ -21,12 +23,16 @@ export default function Principal() {
         <>
             {fruitsPage && (
                 <Frutas
-                    choiceFruit={choiceFruit}
-                    setChoiceFruit={setChoiceFruit}
-                    posts={posts}
-                    setPosts={setPosts} />
+                    setFruitsPage={setFruitsPage}
+                    setSizePage={setSizePage}
+                    setcomplementoPage={setcomplementoPage}
+
+                />
             )}
-            {sizePage && <Tamanho />}
+            {sizePage && <Tamanho
+                setSizePage={setSizePage}
+                setcomplementoPage={setcomplementoPage}
+            />}
             {complementoPage && <Complemento />}
 
         </>
