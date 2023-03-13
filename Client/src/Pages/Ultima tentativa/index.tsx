@@ -19,6 +19,8 @@ export default function Principal() {
 
 
 
+    
+
     return (
         <>
             {fruitsPage && (
