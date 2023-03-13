@@ -82,6 +82,7 @@ export default function Frutas({ posts, setSizePage, setFruitsPage }) {
                                 onClick={() => nextPage(choiceFruit)}
                             >
                                 <button>{choiceFruit}</button>
+                                
                                 <AddShoppingCartIcon />
                             </IconButton>
                         </Stack>
