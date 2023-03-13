@@ -1,25 +1,41 @@
 
-import { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 
-export default function Frutas() {
+import IconButton from '@mui/material/IconButton';
+import Stack from '@mui/material/Stack';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-    //Importação API ----------------------
-    const [posts, setPosts] = useState([])
-    const getPosts = async () => {
-        try {
-            const response = await axios.get('http://localhost:8882/api/pedido');
-            var data = response.data;
-            setPosts(data);
-        } catch (error) {
-            console.log(error)
-        };
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
+
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+    props,
+    ref,
+) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
+
+
+export default function Frutas({ posts, setSizePage, setFruitsPage }) {
+
+    const [open, setOpen] = useState(false);
+    const handleClick = () => {
+        setOpen(true);
     };
-    useEffect(() => {
-        getPosts()
-    }, [])
-    //Importação API ----------------------
-    
+    const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpen(false);
+    };
+
+    const nextPage = () => {
+        if (choiceFruit !== undefined) {
+            setFruitsPage(false);
+            setSizePage(true);
+        } else { setOpen(true); }
+    }
 
     const [choiceFruit, setChoiceFruit] = useState();
 
@@ -49,11 +65,24 @@ export default function Frutas() {
                         </div>
                     </div>
 
-                    <h1 className="pt-8 text-pink-700">Ordem de Pedidos</h1>
+                    <h1 className="pt-8 text-pink-700">Escolhido</h1>
                     <div className="flex gap-5">
-                        <ul>
-                            <p>{choiceFruit}</p>
-                        </ul>
+
+                        <Stack direction="row" spacing={1}>
+                            <IconButton color="secondary" aria-label="add to shopping cart" onClick={() => nextPage(choiceFruit)}>
+                                <button>{choiceFruit}</button>
+                                <AddShoppingCartIcon />
+                            </IconButton>
+                        </Stack>
+
+                        <Stack spacing={2} sx={{ width: '100%' }}>
+                            <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
+                                <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+                                    Escolha uma Fruta!
+                                </Alert>
+                            </Snackbar>
+                        </Stack>
+
                     </div>
                 </div>
             </div>

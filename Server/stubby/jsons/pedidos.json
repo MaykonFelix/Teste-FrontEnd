@@ -30,17 +30,17 @@
     "sizeCup": [
         {
             "id": 1,
-            "name": "Pequeno",
+            "name": "Pequeno (300ml)",
             "price": 10
         },
         {
             "id": 2,
-            "name": "Medio",
+            "name": "Medio (500ml)",
             "price": 12
         },
         {
             "id": 3,
-            "name": "Grande",
+            "name": "Grande (700ml)",
             "price": 15
         }
     ]
