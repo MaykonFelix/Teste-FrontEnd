@@ -1,25 +1,7 @@
 
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 
-export default function Frutas() {
-
-    //Importação API ----------------------
-    const [posts, setPosts] = useState([])
-    const getPosts = async () => {
-        try {
-            const response = await axios.get('http://localhost:8882/api/pedido');
-            var data = response.data;
-            setPosts(data);
-        } catch (error) {
-            console.log(error)
-        };
-    };
-    useEffect(() => {
-        getPosts()
-    }, [])
-    //Importação API ----------------------
-    
+export default function Frutas({ posts }) {
 
     const [choiceFruit, setChoiceFruit] = useState();
 
