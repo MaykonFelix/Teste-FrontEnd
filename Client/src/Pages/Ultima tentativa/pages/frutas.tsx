@@ -1,7 +1,19 @@
 
 import { useState } from "react";
 
-export default function Frutas({ posts }) {
+import IconButton from '@mui/material/IconButton';
+import Stack from '@mui/material/Stack';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
+export default function Frutas({ posts, setSizePage, setFruitsPage }) {
+
+    const nextPage = () => {
+        console.log(choiceFruit)
+        if (choiceFruit !== undefined) {
+            setFruitsPage(false);
+            setSizePage(true);
+        }
+    }
 
     const [choiceFruit, setChoiceFruit] = useState();
 
@@ -31,11 +43,18 @@ export default function Frutas({ posts }) {
                         </div>
                     </div>
 
-                    <h1 className="pt-8 text-pink-700">Ordem de Pedidos</h1>
+                    <h1 className="pt-8 text-pink-700">Pedido</h1>
                     <div className="flex gap-5">
-                        <ul>
-                            <p>{choiceFruit}</p>
-                        </ul>
+
+
+
+                        <Stack direction="row" spacing={1}>
+                            <IconButton color="secondary" aria-label="add to shopping cart" onClick={() => nextPage(choiceFruit)}>
+                                <button>{choiceFruit}</button>
+                                <AddShoppingCartIcon />
+                            </IconButton>
+                        </Stack>
+
                     </div>
                 </div>
             </div>

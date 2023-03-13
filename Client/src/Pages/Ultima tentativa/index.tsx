@@ -6,7 +6,6 @@ import Tamanho from "./pages/tamanho"
 import Complemento from "./pages/complemento"
 import axios from "axios";
 
-
 export default function Principal() {
 
     //Importação API ----------------------
@@ -25,9 +24,11 @@ export default function Principal() {
     }, [])
     //Importação API ----------------------
 
+
     const [fruitsPage, setFruitsPage] = useState(true);
     const [sizePage, setSizePage] = useState(false);
     const [complementoPage, setcomplementoPage] = useState(false);
+
 
     return (
         <>
