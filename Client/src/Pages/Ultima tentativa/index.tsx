@@ -32,8 +32,6 @@ export default function Principal() {
     //Importação API ----------------------
 
 
-
-
     /*     const [fruitsPage, setFruitsPage] = useState(true);
         const [sizePage, setSizePage] = useState(false);
         const [complementoPage, setcomplementoPage] = useState(false);
@@ -65,9 +63,6 @@ export default function Principal() {
                     </>
                 )
                 ))}
-
-
-
 
 
             {/*             {fruitsPage && (
