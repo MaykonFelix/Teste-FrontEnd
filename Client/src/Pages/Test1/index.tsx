@@ -19,8 +19,6 @@ export default function Principal() {
             const response = await axios.get('https://640f2f684ed25579dc486403.mockapi.io/api/pedido/frutas');
             var data = response.data;
             setPosts(data);
-            console.log(data)
-
         } catch (error) {
             console.log(error)
         };
@@ -32,14 +30,14 @@ export default function Principal() {
     //Importação API ----------------------
 
 
-    /*     const [fruitsPage, setFruitsPage] = useState(true);
-        const [sizePage, setSizePage] = useState(false);
-        const [complementoPage, setcomplementoPage] = useState(false);
-        const [pageFinalPage, setPageFinalPage] = useState(false); */
+    const [fruitsPage, setFruitsPage] = useState(true);
+    const [sizePage, setSizePage] = useState(false);
+    const [complementoPage, setcomplementoPage] = useState(false);
+    const [pageFinalPage, setPageFinalPage] = useState(false);
 
     return (
         <>
-
+            {/* 
             <h1>Teste</h1>
 
             {posts.length === 0 ?
@@ -62,10 +60,10 @@ export default function Principal() {
 
                     </>
                 )
-                ))}
+                ))} */}
 
 
-            {/*             {fruitsPage && (
+            {fruitsPage && (
                 <Frutas
                     posts={posts}
                     setFruitsPage={setFruitsPage}
@@ -89,7 +87,7 @@ export default function Principal() {
                 posts={posts}
             />}
 
- */}
+
 
         </>
     )

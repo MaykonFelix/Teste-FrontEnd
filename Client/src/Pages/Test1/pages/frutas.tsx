@@ -45,22 +45,28 @@ export default function Frutas({ posts, setSizePage, setFruitsPage }) {
                 <div className="shadow-lg shadow-pink-500/30 hover:bg-pink-200/20 duration-500 text-slate-500 w-[35rem] h-screen rounded-lg m-2 justify-center items-center flex flex-col">
 
                     {/* Escolha a Fruta */}
-                    <h1 className="pb-8 text-pink-700">Fruta</h1>
+                    <h1 className="pb-8 text-pink-700">Escolha a Fruta</h1>
                     <div className="flex">
                         <div className="flex flex-col">
 
-                            <h2>Frutas:</h2>
-
                             {posts.length === 0 ?
                                 (<p>Carregando..</p>) :
-                                (posts.fruta.map((post) => (
-                                    <button
-                                        className="flex p-2 gap-4"
-                                        key={crypto.randomUUID()}
-                                        onClick={() => setChoiceFruit(post.name)}
-                                    >
-                                        {post.name}
-                                    </button>)
+                                (posts.map((post) => (
+                                    <div className="flex items-center justify-around gap-4">
+                                        <button
+                                            key={crypto.randomUUID()}
+                                            onClick={() => setChoiceFruit(post.name)}>
+                                            <p> {post.name}</p>
+                                        </button>
+                                        <img
+                                            key={crypto.randomUUID()}
+                                            src={post.image}
+                                            alt=""
+                                            className="w-10"
+                                        />
+
+                                    </div>
+                                )
                                 ))}
                         </div>
                     </div>
@@ -70,7 +76,7 @@ export default function Frutas({ posts, setSizePage, setFruitsPage }) {
 
                         <Stack direction="row" spacing={1}>
                             <IconButton color="secondary" aria-label="add to shopping cart" onClick={() => nextPage(choiceFruit)}>
-                                <button>{choiceFruit}</button>
+                                <button>{choiceFruit}   </button>
                                 <AddShoppingCartIcon />
                             </IconButton>
                         </Stack>
