@@ -1,18 +1,42 @@
 
-import { useState } from "react";
+import React, { useState } from "react";
 
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
+
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+    props,
+    ref,
+) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
+
+
 export default function Frutas({ posts, setSizePage, setFruitsPage }) {
+
+    const [open, setOpen] = useState(false);
+    const handleClick = () => {
+        setOpen(true);
+    };
+    const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpen(false);
+    };
 
     const nextPage = () => {
         console.log(choiceFruit)
         if (choiceFruit !== undefined) {
             setFruitsPage(false);
             setSizePage(true);
-        }
+        } else { setOpen(true); }
     }
 
     const [choiceFruit, setChoiceFruit] = useState();
@@ -53,6 +77,14 @@ export default function Frutas({ posts, setSizePage, setFruitsPage }) {
                                 <button>{choiceFruit}</button>
                                 <AddShoppingCartIcon />
                             </IconButton>
+                        </Stack>
+
+                        <Stack spacing={2} sx={{ width: '100%' }}>
+                            <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
+                                <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+                                    Escolha uma Fruta!
+                                </Alert>
+                            </Snackbar>
                         </Stack>
 
                     </div>
