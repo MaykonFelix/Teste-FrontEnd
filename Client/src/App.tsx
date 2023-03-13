@@ -1,6 +1,6 @@
 /* import "./App.css" */
 import docTitle from "./components/Title";
-import Principal from "./Pages/Ultima tentativa";
+import Principal from "./Pages/Test1";
 
 function App() {
 
