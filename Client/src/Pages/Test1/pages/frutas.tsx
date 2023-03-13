@@ -75,8 +75,13 @@ export default function Frutas({ posts, setSizePage, setFruitsPage }) {
                     <div className="flex gap-5">
 
                         <Stack direction="row" spacing={1}>
-                            <IconButton color="secondary" aria-label="add to shopping cart" onClick={() => nextPage(choiceFruit)}>
-                                <button>{choiceFruit}   </button>
+                            <IconButton
+                            className="gap-4"
+                                color="secondary"
+                                aria-label="add to shopping cart"
+                                onClick={() => nextPage(choiceFruit)}
+                            >
+                                <button>{choiceFruit}</button>
                                 <AddShoppingCartIcon />
                             </IconButton>
                         </Stack>
