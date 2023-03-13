@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Frutas from "./pages/frutas"
 import Tamanho from "./pages/tamanho"
 import Complemento from "./pages/complemento"
+import Paginafinal from "./pages/pagefinal"
 import axios from "axios";
 
 export default function Principal() {
@@ -28,7 +29,7 @@ export default function Principal() {
     const [fruitsPage, setFruitsPage] = useState(true);
     const [sizePage, setSizePage] = useState(false);
     const [complementoPage, setcomplementoPage] = useState(false);
-
+    const [pageFinalPage, setPageFinalPage] = useState(false);
 
     return (
         <>
@@ -51,6 +52,12 @@ export default function Principal() {
             {complementoPage && <Complemento
                 posts={posts}
             />}
+
+            {pageFinalPage && <Paginafinal
+                posts={posts}
+            />}
+
+
 
         </>
     )
