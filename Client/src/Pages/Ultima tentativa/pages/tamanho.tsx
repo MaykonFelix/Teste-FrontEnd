@@ -1,24 +1,9 @@
 
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 
-export default function Frutas() {
+export default function Tamanho({ posts }) {
 
-    //Importação API ----------------------
-    const [posts, setPosts] = useState([])
-    const getPosts = async () => {
-        try {
-            const response = await axios.get('http://localhost:8882/api/pedido');
-            var data = response.data;
-            setPosts(data);
-        } catch (error) {
-            console.log(error)
-        };
-    };
-    useEffect(() => {
-        getPosts()
-    }, [])
-    //Importação API ----------------------
+    
 
     const [choiceSize, setchoiceSize] = useState([]);
 
@@ -42,8 +27,8 @@ export default function Frutas() {
                                         key={crypto.randomUUID()}
                                         onClick={() => setchoiceSize([post.name, post.price])}
                                     >
-                                        {post.name}
-                                        R$ {post.price},00
+                                        <p> {post.name}</p>
+                                        <p>R$ {post.price},00</p>
                                     </button>)
                                 ))}
                         </div>
