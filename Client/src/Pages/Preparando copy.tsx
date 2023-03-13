@@ -1,12 +1,6 @@
 
-import { useEffect, useState } from "react";
-
-import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import Tooltip from '@mui/material/Tooltip';
-import api from "../components/axios";
-
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Tipagem Inicial
 /* interface IshoppingCartFruitItem {
@@ -55,26 +49,6 @@ const sizeCups: IsizeCup[] = [
 
 //Inicio Aplicação ----------------------
 export default function Preparando() {
-
-
-    const [posts, setPosts] = useState([])
-
-    const getPosts = async () => {
-        try {
-            const response = await api.get('/api/pedido');
-            var data = response.data;
-            setPosts(data);
-        } catch (error) {
-            console.log(error)
-        };
-    };
-    useEffect(() => {
-        getPosts()
-    }, [])
-    console.log(posts)
-
-
-
     // Função inicial
     /* 
         const [shoppingCartFruit, setshoppingCartFruit] = useState<IshoppingCartFruitItem[]>([]);
@@ -219,6 +193,11 @@ export default function Preparando() {
     return (
         <>
 
+            <div className="flex gap-4 w-screen justify-center text-center bg-slate-500 text-white">
+                <Link to="/"> <p>Home</p> </Link>
+                <Link to="/preparando"> <p>Preparando</p> </Link>
+            </div>
+
             <div className="bg-slate-100 w-screen h-screen flex flex-col justify-center items-center">
 
                 <div className="shadow-lg shadow-pink-500/30 hover:bg-pink-200/20 duration-500 text-slate-500 w-[35rem] h-screen rounded-lg m-2 justify-center items-center flex flex-col">
@@ -269,56 +248,47 @@ export default function Preparando() {
 
                     {/* Sendo Realizado o Pedido */}
                     <h1 className="pt-8 text-pink-700">Pedido</h1>
-                    <div className="flex gap-5 justify-center">
+                    <div className="flex gap-5">
+                        <ul>
+                            {shoppingCartFruit.map((item) => (
+                                <p
+                                    key={crypto.randomUUID()}>
+                                    {item.produto.name}
+                                </p>
+                            ))}
+                        </ul>
+                        <ul>
+                            {shoppingCartComplement.map((item) => (
+                                <p
+                                    key={crypto.randomUUID()}>
+                                    {item.produto.name}
+                                </p>
+                            ))}
+                        </ul>
+                        <ul>
+                            {shoppingCartSizeCup.map((item) => (
+                                <p
+                                    key={crypto.randomUUID()}>
+                                    {item.produto.name} R$ {item.produto.price}
+                                    {console.log(item)}
+                                </p>
+                            ))}
+                        </ul>
 
-                        {shoppingCartFruit.map((item) => (
-                            <p
-                                key={crypto.randomUUID()}
-                                className="flex flex-col justify-center">
-                                {item.produto.name}
-                            </p>
-                        ))}
-
-                        {shoppingCartComplement.map((item) => (
-                            <p
-                                key={crypto.randomUUID()}
-                                className="flex flex-col justify-center">
-                                {item.produto.name}
-                            </p>
-                        ))}
-
-
-                        {shoppingCartSizeCup.map((item) => (
-                            <p
-                                key={crypto.randomUUID()}
-                                className="flex flex-col justify-center">
-                                {item.produto.name} R$ {item.produto.price}
-                                {console.log(item)}
-                            </p>
-                        ))}
-
-                        <Tooltip title="Adicionar Carrinho" placement="right" arrow>
-                            <Stack direction="row" spacing={1}>
-                                <IconButton color="secondary" aria-label="add to shopping cart">
-                                    <AddShoppingCartIcon onClick={() => handleAddCart()} />
-                                </IconButton>
-                            </Stack>
-                        </Tooltip>
+                        <button
+                            className="bg-pink-500 hover:bg-pink-600 text-white w-[5rem] rounded-xl "
+                            key={crypto.randomUUID()}
+                            onClick={() => handleAddCart()}>
+                            Finalizar
+                        </button>
 
 
                     </div>
 
 
-
-
                     <h1 className="pt-8 text-pink-700">Ordem de Pedidos</h1>
-
-
-
                     <div className="flex gap-5">
                         <ul>
-
-                            {/* {orderCart.map((item) => ()} */}
 
                         </ul>
                     </div>

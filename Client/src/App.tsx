@@ -1,8 +1,6 @@
 import "./App.css"
 import docTitle from "./components/Title";
-
-
-import { Rotas } from "./routes";
+import Principal from "./Pages/Ultima tentativa";
 
 
 function App() {
@@ -11,7 +9,7 @@ function App() {
 
   return (
     <>
-      <Rotas />
+      <Principal />
     </>
   )
 }

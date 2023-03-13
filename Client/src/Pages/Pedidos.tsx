@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../components/axios";
 
-
 import './Pedidos.css'
-import { Link } from "react-router-dom";
-
-
 
 function Pedidos() {
 
@@ -28,11 +24,6 @@ function Pedidos() {
 
     return (
         <>
-
-            <div className="flex gap-4 w-screen justify-center text-center bg-slate-500 text-white">
-                <Link to="/"> <p>Home</p> </Link>
-                <Link to="/preparando"> <p>Preparando</p> </Link>
-            </div>
 
             <div className="bg-slate-100 w-screen h-screen flex flex-col justify-center items-center">
 
