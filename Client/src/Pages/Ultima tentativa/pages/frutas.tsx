@@ -5,7 +5,6 @@ import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 
@@ -32,7 +31,6 @@ export default function Frutas({ posts, setSizePage, setFruitsPage }) {
     };
 
     const nextPage = () => {
-        console.log(choiceFruit)
         if (choiceFruit !== undefined) {
             setFruitsPage(false);
             setSizePage(true);
@@ -67,10 +65,8 @@ export default function Frutas({ posts, setSizePage, setFruitsPage }) {
                         </div>
                     </div>
 
-                    <h1 className="pt-8 text-pink-700">Pedido</h1>
+                    <h1 className="pt-8 text-pink-700">Escolhido</h1>
                     <div className="flex gap-5">
-
-
 
                         <Stack direction="row" spacing={1}>
                             <IconButton color="secondary" aria-label="add to shopping cart" onClick={() => nextPage(choiceFruit)}>
