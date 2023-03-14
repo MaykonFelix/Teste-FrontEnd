@@ -77,28 +77,29 @@ export default function Tamanho({ postsSizeCup, setSizePage, setcomplementoPage 
                         </div>
                     </div>
 
-                    <h1 className="pt-8 text-pink-700">Ordem de Pedidos</h1>
-                    <div className="flex gap-5">
+                    <h1 className="pt-8 text-pink-700">Escolhido</h1>
 
-
+                    <div className="flex items-center gap-5">
                         <Stack direction="row" spacing={1}>
-                            <IconButton color="secondary" aria-label="add to shopping cart" onClick={() => nextPage(choiceSize)}>
-                                <button>
-                                    <p>{choiceSize[0]}</p>
-                                    <p>$ {choiceSize[1]},00</p>
-                                </button>
+                            <IconButton id="btn1" color="secondary" aria-label="add to shopping cart" onClick={() => nextPage(choiceSize)}>
+                                <AddShoppingCartIcon />
                             </IconButton>
                         </Stack>
-
-                        <Stack spacing={2} sx={{ width: '100%' }}>
-                            <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
-                                <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
-                                    Escolha um Tamanho!
-                                </Alert>
-                            </Snackbar>
-                        </Stack>
-
+                        <label for="btn1"
+                            className="cursor-pointer hover:bg-fuchsia-400-200/20">
+                            <p>{choiceSize[0]}</p>
+                            <p>$ {choiceSize[1]},00</p>
+                        </label>
                     </div>
+
+                    <Stack spacing={2} sx={{ width: '100%' }}>
+                        <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
+                            <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+                                Escolha um Tamanho!
+                            </Alert>
+                        </Snackbar>
+                    </Stack>
+
                 </div>
             </div>
         </>

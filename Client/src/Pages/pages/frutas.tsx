@@ -71,8 +71,8 @@ export default function Frutas({ postsFruit, setSizePage, setFruitsPage }) {
                     </div>
 
                     <h1 className="pt-8 text-pink-700">Escolhido</h1>
-                    <div className="flex items-center gap-5">
 
+                    <div className="flex items-center gap-5">
                         <Stack direction="row" spacing={1}>
                             <IconButton
                                 className="gap-4"
@@ -84,17 +84,20 @@ export default function Frutas({ postsFruit, setSizePage, setFruitsPage }) {
                                 <AddShoppingCartIcon />
                             </IconButton>
                         </Stack>
-                        <label for="btn1">{choiceFruit}</label>
-
-                        <Stack spacing={2} sx={{ width: '100%' }}>
-                            <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
-                                <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
-                                    <p> Escolha uma Fruta!</p>
-                                </Alert>
-                            </Snackbar>
-                        </Stack>
-
+                        <label
+                            for="btn1"
+                            className="cursor-pointer"
+                        >{choiceFruit}</label>
                     </div>
+
+                    <Stack spacing={2} sx={{ width: '100%' }}>
+                        <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
+                            <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+                                <p> Escolha uma Fruta!</p>
+                            </Alert>
+                        </Snackbar>
+                    </Stack>
+
                 </div>
             </div>
         </>
