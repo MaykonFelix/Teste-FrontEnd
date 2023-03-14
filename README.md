@@ -28,9 +28,9 @@ Teste processo seletivo da empresa<br/>
 ### Mock - Server
 
 + Para assesar os JSON's 
-https://mock-test-virid.vercel.app/fruits
-https://mock-test-virid.vercel.app/complements
-https://mock-test-virid.vercel.app/sizecup
+<p>https://mock-test-virid.vercel.app/fruits</p>
+<p>https://mock-test-virid.vercel.app/complements</p>
+<p>https://mock-test-virid.vercel.app/sizecup</p>
 
 ### Mock - Repositorio GitHub
 
