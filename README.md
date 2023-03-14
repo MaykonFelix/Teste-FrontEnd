@@ -6,12 +6,12 @@ Teste processo seletivo da empresa<br/>
 
 ## 🧭 Tecnologias
 
-### Front-end
+### 🎭 Front-end
 + `ReactJS + TypeScript`
 + `Axios`
 + `Tailwindcss`
 
-### Back-End
+### 🧰 Back-End
 + `Stubby`
 
 ## Acesso
@@ -25,14 +25,14 @@ Teste processo seletivo da empresa<br/>
 + `yarn dev`
 
 
-### Mock - Server
+### 💾 Mock - Server
 
 + Para assesar os JSON's 
 <p>https://mock-test-virid.vercel.app/fruits</p>
 <p>https://mock-test-virid.vercel.app/complements</p>
 <p>https://mock-test-virid.vercel.app/sizecup</p>
 
-### Mock - Repositorio GitHub
+### 🐱‍👤 Mock - Repositorio GitHub
 
 https://github.com/MaykonFelix/MockTest
 
