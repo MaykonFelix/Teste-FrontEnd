@@ -11,6 +11,8 @@ import axios from "axios";
 
 export default function Principal() {
 
+    const [url, setUrl] = useState('https://mock-test-virid.vercel.app/fruits');
+
     /* 
     https://mock-test-virid.vercel.app/fruits
     https://mock-test-virid.vercel.app/complements
@@ -22,8 +24,8 @@ export default function Principal() {
 
     const getPosts = async () => {
         try {
-            const response = await axios.get('https://mock-test-virid.vercel.app/fruits');
-            var data = response.data;
+            const res = await axios.get(url);
+            var { data } = res;
             setPosts(data);
         } catch (error) {
             console.log(error)
