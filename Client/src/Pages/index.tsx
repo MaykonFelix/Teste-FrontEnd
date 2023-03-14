@@ -37,39 +37,15 @@ export default function Principal() {
     }, [])
     //Importação API ----------------------
 
-
+    // Navegação ----------------------
     const [fruitsPage, setFruitsPage] = useState(true);
     const [sizePage, setSizePage] = useState(false);
     const [complementoPage, setcomplementoPage] = useState(false);
     const [pageFinalPage, setPageFinalPage] = useState(false);
+    // Navegação ----------------------
 
     return (
         <>
-            {/* 
-            <h1>Teste</h1>
-
-            {posts.length === 0 ?
-                (<p>Carregando..</p>) :
-                (posts.map((post) => (
-                    <>
-                        <button
-                            className="flex p-2 gap-4"
-                            key={crypto.randomUUID()}
-                        >
-                            {post.name}
-                        </button>
-                        <img
-                            key={crypto.randomUUID()}
-                            src={post.image}
-                            alt=""
-                            className="w-20"
-                        />
-
-
-                    </>
-                )
-                ))} */}
-
 
             {fruitsPage && (
                 <Frutas
