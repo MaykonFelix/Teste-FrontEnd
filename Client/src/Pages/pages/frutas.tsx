@@ -16,7 +16,6 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
 });
 
 
-
 export default function Frutas({ postsFruit, setSizePage, setFruitsPage }) {
 
     const [open, setOpen] = useState(false);
@@ -72,25 +71,25 @@ export default function Frutas({ postsFruit, setSizePage, setFruitsPage }) {
                     </div>
 
                     <h1 className="pt-8 text-pink-700">Escolhido</h1>
-                    <div className="flex gap-5">
+                    <div className="flex items-center gap-5">
 
                         <Stack direction="row" spacing={1}>
                             <IconButton
                                 className="gap-4"
+                                id="btn1"
                                 color="secondary"
                                 aria-label="add to shopping cart"
                                 onClick={() => nextPage(choiceFruit)}
                             >
-                                <button>{choiceFruit}</button>
-
                                 <AddShoppingCartIcon />
                             </IconButton>
                         </Stack>
+                        <label for="btn1">{choiceFruit}</label>
 
                         <Stack spacing={2} sx={{ width: '100%' }}>
                             <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
                                 <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
-                                    Escolha uma Fruta!
+                                    <p> Escolha uma Fruta!</p>
                                 </Alert>
                             </Snackbar>
                         </Stack>
