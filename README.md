@@ -20,18 +20,21 @@ Teste processo seletivo da empresa<br/>
 
 + `cd Client`
 + `npm run dev` 
-ou 
++ ou 
 + `yarn`
 + `yarn dev`
 
 
-### Stubby ( Mock )
+### Mock - Server
 
-+ `cd Server/stubby/`
-+ `npm install -g stubby`
-+ `stubby -d endpoints.yml`
-    + Para ver o status acesse  http://localhost:8889/status
-    + Para assesar o JSON  http://localhost:8882/api/pedido
+    + Para assesar os JSON's 
+    https://mock-test-virid.vercel.app/fruits
+    https://mock-test-virid.vercel.app/complements
+    https://mock-test-virid.vercel.app/sizecup
+
+### Mock - Repositorio GitHub
+
+https://github.com/MaykonFelix/MockTest
 
 ## 💻 Projeto
 
