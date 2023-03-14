@@ -17,7 +17,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
 
 
 
-export default function Frutas({ posts, setSizePage, setFruitsPage }) {
+export default function Frutas({ postsFruit, setSizePage, setFruitsPage }) {
 
     const [open, setOpen] = useState(false);
     const handleClick = () => {
@@ -49,9 +49,9 @@ export default function Frutas({ posts, setSizePage, setFruitsPage }) {
                     <div className="flex">
                         <div className="flex flex-col">
 
-                            {posts.length === 0 ?
+                            {postsFruit.length === 0 ?
                                 (<p>Carregando..</p>) :
-                                (posts.map((post) => (
+                                (postsFruit.map((post) => (
                                     <div className="flex items-center justify-around gap-4">
                                         <button
                                             key={crypto.randomUUID()}
@@ -76,13 +76,13 @@ export default function Frutas({ posts, setSizePage, setFruitsPage }) {
 
                         <Stack direction="row" spacing={1}>
                             <IconButton
-                            className="gap-4"
+                                className="gap-4"
                                 color="secondary"
                                 aria-label="add to shopping cart"
                                 onClick={() => nextPage(choiceFruit)}
                             >
                                 <button>{choiceFruit}</button>
-                                
+
                                 <AddShoppingCartIcon />
                             </IconButton>
                         </Stack>

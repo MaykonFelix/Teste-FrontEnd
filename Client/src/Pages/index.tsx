@@ -10,23 +10,37 @@ import axios from "axios";
 
 
 export default function Principal() {
-
-    const [url, setUrl] = useState('https://mock-test-virid.vercel.app/fruits');
-
     /* 
-    https://mock-test-virid.vercel.app/fruits
-    https://mock-test-virid.vercel.app/complements
-    https://mock-test-virid.vercel.app/sizecup
-    */
+  https://mock-test-virid.vercel.app/fruits
+  https://mock-test-virid.vercel.app/complements
+  https://mock-test-virid.vercel.app/sizecup
+  */
+
+    const [urlFruit, setUrlFrui] = useState('https://mock-test-virid.vercel.app/fruits');
+    const [urlSizeCup, setUrlSizeCup] = useState('https://mock-test-virid.vercel.app/sizecup');
+    const [urlComplement, setUrlComplement] = useState('https://mock-test-virid.vercel.app/complements');
+
 
     //Importação API ----------------------
-    const [posts, setPosts] = useState([])
+    const [postsFruit, setPostsFruit] = useState([])
+    const [postsSizeCup, setPostsSizeCup] = useState([])
+    const [postsComplement, setPostsComplement] = useState([])
+
 
     const getPosts = async () => {
         try {
-            const res = await axios.get(url);
-            var { data } = res;
-            setPosts(data);
+            const resFruit = await axios.get(urlFruit);
+            var { data } = resFruit;
+            setPostsFruit(data);
+
+            const resSizeCup = await axios.get(urlSizeCup);
+            var { data } = resSizeCup;
+            setPostsSizeCup(data);
+
+            const resComplement = await axios.get(urlComplement);
+            var { data } = resComplement;
+            setPostsComplement(data);
+
         } catch (error) {
             console.log(error)
         };
@@ -49,7 +63,7 @@ export default function Principal() {
 
             {fruitsPage && (
                 <Frutas
-                    posts={posts}
+                    postsFruit={postsFruit}
                     setFruitsPage={setFruitsPage}
                     setSizePage={setSizePage}
                     setcomplementoPage={setcomplementoPage}
@@ -58,13 +72,13 @@ export default function Principal() {
             )}
 
             {sizePage && <Tamanho
-                posts={posts}
+                postsSizeCup={postsSizeCup}
                 setSizePage={setSizePage}
                 setcomplementoPage={setcomplementoPage}
             />}
 
             {complementoPage && <Complemento
-                posts={posts}
+                postsComplement={postsComplement}
             />}
 
             {pageFinalPage && <Paginafinal

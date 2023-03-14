@@ -16,7 +16,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
 });
 
 
-export default function Tamanho({ posts, setSizePage, setcomplementoPage }) {
+export default function Tamanho({ postsSizeCup, setSizePage, setcomplementoPage }) {
 
     const [open, setOpen] = useState(false);
     const handleClick = () => {
@@ -51,9 +51,9 @@ export default function Tamanho({ posts, setSizePage, setcomplementoPage }) {
 
                             <h2>Tamanho:</h2>
 
-                            {posts.length === 0 ?
+                            {postsSizeCup.length === 0 ?
                                 (<p>Carregando..</p>) :
-                                (posts.sizeCup.map((post) => (
+                                (postsSizeCup.map((post) => (
                                     <button
                                         className="flex p-2 gap-4"
                                         key={crypto.randomUUID()}
