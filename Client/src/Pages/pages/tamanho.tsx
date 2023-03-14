@@ -54,14 +54,25 @@ export default function Tamanho({ postsSizeCup, setSizePage, setcomplementoPage 
                             {postsSizeCup.length === 0 ?
                                 (<p>Carregando..</p>) :
                                 (postsSizeCup.map((post) => (
-                                    <button
-                                        className="flex p-2 gap-4"
-                                        key={crypto.randomUUID()}
-                                        onClick={() => setchoiceSize([post.name, post.price])}
-                                    >
-                                        <p> {post.name}</p>
-                                        <p>R$ {post.price},00</p>
-                                    </button>)
+                                    <div className="flex items-center justify-around gap-4">
+                                        <button
+                                            className="flex p-2 gap-4"
+                                            key={crypto.randomUUID()}
+                                            onClick={() => setchoiceSize([post.name, post.price])}
+                                        >
+                                            <p> {post.name}</p>
+                                            <p>R$ {post.price},00</p>
+                                        </button>
+                                        <img
+                                            key={crypto.randomUUID()}
+                                            src={post.image}
+                                            alt=""
+                                            className="w-10"
+                                        />
+                                    </div>
+
+                                )
+
                                 ))}
                         </div>
                     </div>
@@ -73,10 +84,9 @@ export default function Tamanho({ postsSizeCup, setSizePage, setcomplementoPage 
                         <Stack direction="row" spacing={1}>
                             <IconButton color="secondary" aria-label="add to shopping cart" onClick={() => nextPage(choiceSize)}>
                                 <button>
-                                    {choiceSize[0]}
-                                    R$ {choiceSize[1]}
+                                    <p>{choiceSize[0]}</p>
+                                    <p>$ {choiceSize[1]},00</p>
                                 </button>
-                                <AddShoppingCartIcon />
                             </IconButton>
                         </Stack>
 
