@@ -16,7 +16,7 @@ const nextPage = () => {
     if (choiceFruit !== undefined) {
         setFruitsPage(false);
         setSizePage(true);
-    } else { setOpen(true); }
+    } else { }
 }
 
 export default function Complemento({ postsComplement }) {

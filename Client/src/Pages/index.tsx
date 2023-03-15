@@ -24,9 +24,9 @@ export default function Principal() {
     // Manipulando API ----------------------
 
     // Navegação ----------------------
-    const [fruitsPage, setFruitsPage] = useState(false);
+    const [fruitsPage, setFruitsPage] = useState(true);
     const [sizePage, setSizePage] = useState(false);
-    const [complementoPage, setcomplementoPage] = useState(true);
+    const [complementoPage, setcomplementoPage] = useState(false);
     const [pageFinalPage, setPageFinalPage] = useState(false);
     // Navegação ----------------------
 
