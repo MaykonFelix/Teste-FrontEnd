@@ -16,7 +16,7 @@ Teste processo seletivo da empresa<br/>
 
 ### <img src="https://vitejs.dev/logo.svg" width="28px"/> Vite
 
-+ `cd Client`
++ `cd Client/`
 + `yarn`
 + `yarn dev`
 
