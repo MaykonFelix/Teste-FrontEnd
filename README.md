@@ -14,7 +14,7 @@ Teste processo seletivo da empresa<br/>
 
 ## Acesso
 
-### Vite
+### <img src="https://vitejs.dev/logo.svg" width="28px"/> Vite
 
 + `cd Client`
 + `npm run dev` 
@@ -24,12 +24,11 @@ Teste processo seletivo da empresa<br/>
 
 
 ## 🧰 Back-End 
-### 💾 Mock - Server
+### 💾 Mock - Json-Server
 
 + Para assesar os JSON's 
-<p>https://mock-test-virid.vercel.app/fruits</p>
-<p>https://mock-test-virid.vercel.app/complements</p>
-<p>https://mock-test-virid.vercel.app/sizecup</p>
+  <p>https://mock-test-virid.vercel.app/fruits</p>
+
 
 ### 🐱‍👤 Mock - Repositorio GitHub
 
@@ -37,7 +36,6 @@ https://github.com/MaykonFelix/MockTest
 
 ## 💻 Projeto
 
-O projeto é um sistema de solicitação de Açaí 🍨, aonde o cliente 👩 fica a vontate para escolher o produto de seu gosto e que sabe o valor 💰 e o tempo ⌚ que vai esperar´🚀.
-
+O projeto é um sistema de solicitação de Açaí 🍨.
 
 Feito com ♥ by Maykon <img src="https://github.com/abdoachhoubi/abdoachhoubi/blob/main/gifs/Hi.gif" width="30" alt="gif" />
