@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 
@@ -36,6 +35,7 @@ export default function Frutas({ postsFruit, setSizePage, setFruitsPage }) {
         } else { setOpen(true); }
     }
 
+
     const [choiceFruit, setChoiceFruit] = useState();
 
     return (
@@ -43,7 +43,6 @@ export default function Frutas({ postsFruit, setSizePage, setFruitsPage }) {
             <div className="bg-slate-100 w-screen h-screen flex flex-col justify-center items-center">
                 <div className="shadow-lg shadow-pink-500/30 hover:bg-pink-200/20 duration-500 text-slate-500 w-[35rem] h-screen rounded-lg m-2 justify-center items-center flex flex-col">
 
-                    {/* Escolha a Fruta */}
                     <h1 className="pb-8 text-pink-700">Escolha a Fruta</h1>
                     <div className="flex">
                         <div className="flex flex-col">

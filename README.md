@@ -11,8 +11,6 @@ Teste processo seletivo da empresa<br/>
 + `Axios`
 + `Tailwindcss`
 
-### 🧰 Back-End
-+ `Stubby`
 
 ## Acesso
 
@@ -25,6 +23,7 @@ Teste processo seletivo da empresa<br/>
 + `yarn dev`
 
 
+## 🧰 Back-End 
 ### 💾 Mock - Server
 
 + Para assesar os JSON's 
