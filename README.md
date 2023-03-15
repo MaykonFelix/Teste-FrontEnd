@@ -6,13 +6,11 @@ Teste processo seletivo da empresa<br/>
 
 ## 🧭 Tecnologias
 
-### Front-end
+### 🎭 Front-end
 + `ReactJS + TypeScript`
 + `Axios`
 + `Tailwindcss`
 
-### Back-End
-+ `Stubby`
 
 ## Acesso
 
@@ -20,18 +18,22 @@ Teste processo seletivo da empresa<br/>
 
 + `cd Client`
 + `npm run dev` 
-ou 
++ ou 
 + `yarn`
 + `yarn dev`
 
 
-### Stubby ( Mock )
+## 🧰 Back-End 
+### 💾 Mock - Server
 
-+ `cd Server/stubby/`
-+ `npm install -g stubby`
-+ `stubby -d endpoints.yml`
-    + Para ver o status acesse  http://localhost:8889/status
-    + Para assesar o JSON  http://localhost:8882/api/pedido
++ Para assesar os JSON's 
+<p>https://mock-test-virid.vercel.app/fruits</p>
+<p>https://mock-test-virid.vercel.app/complements</p>
+<p>https://mock-test-virid.vercel.app/sizecup</p>
+
+### 🐱‍👤 Mock - Repositorio GitHub
+
+https://github.com/MaykonFelix/MockTest
 
 ## 💻 Projeto
 
