@@ -9,11 +9,9 @@ import Complemento from "./pages/complemento"
 import Paginafinal from "./pages/pagefinal"
 import axios from "axios";
 
-
 export default function App() {
 
   docTitle(); //Titulo Animado
-
 
   // Pegando API ----------------------
   const [urlFruit, setUrlFrui] = useState('https://mock-test-virid.vercel.app/fruits');
@@ -26,7 +24,6 @@ export default function App() {
   const [postsSizeCup, setPostsSizeCup] = useState([])
   const [postsComplement, setPostsComplement] = useState([])
   // Manipulando API ----------------------
-
 
 
   //Função para carregar API ----------------------
@@ -54,17 +51,12 @@ export default function App() {
   //Função da API ----------------------
 
 
-
-
   // Navegação ----------------------
   const [fruitsPage, setFruitsPage] = useState(true);
   const [sizePage, setSizePage] = useState(false);
   const [complementoPage, setcomplementoPage] = useState(false);
   const [pageFinalPage, setPageFinalPage] = useState(false);
   // Navegação ----------------------
-
-
-
 
 
   return (
