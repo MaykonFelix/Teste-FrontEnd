@@ -5,24 +5,57 @@ import docTitle from "./components/Title";
 import Frutas from "./pages/frutas"
 import Tamanho from "./pages/tamanho"
 import Complemento from "./pages/complemento"
+
 import Paginafinal from "./pages/pagefinal"
 import axios from "axios";
 
+import { postsFruit, postsSizeCup, postsComplement } from "./components/API/axioapi"
 
 export default function App() {
   docTitle(); //Titulo Animado
 
-  // Pegando API ----------------------
-  const [urlFruit, setUrlFrui] = useState('https://mock-test-virid.vercel.app/fruits');
-  const [urlSizeCup, setUrlSizeCup] = useState('https://mock-test-virid.vercel.app/sizecup');
-  const [urlComplement, setUrlComplement] = useState('https://mock-test-virid.vercel.app/complements');
-  // Pegando API ----------------------
+  console.log(postsFruit)
 
-  // Manipulando API ----------------------
-  const [postsFruit, setPostsFruit] = useState([])
-  const [postsSizeCup, setPostsSizeCup] = useState([])
-  const [postsComplement, setPostsComplement] = useState([])
-  // Manipulando API ----------------------
+  /*  // Pegando API ----------------------
+   const [urlFruit, setUrlFrui] = useState('https://mock-test-virid.vercel.app/fruits');
+   const [urlSizeCup, setUrlSizeCup] = useState('https://mock-test-virid.vercel.app/sizecup');
+   const [urlComplement, setUrlComplement] = useState('https://mock-test-virid.vercel.app/complements');
+   // Pegando API ----------------------
+ 
+   // Manipulando API ----------------------
+   const [postsFruit, setPostsFruit] = useState([])
+   const [postsSizeCup, setPostsSizeCup] = useState([])
+   const [postsComplement, setPostsComplement] = useState([])
+   // Manipulando API ----------------------
+ 
+ 
+ 
+   //Função para carregar API ----------------------
+   const getPosts = async () => {
+     try {
+       const resFruit = await axios.get(urlFruit);
+       var { data } = resFruit;
+       setPostsFruit(data);
+ 
+       const resSizeCup = await axios.get(urlSizeCup);
+       var { data } = resSizeCup;
+       setPostsSizeCup(data);
+ 
+       const resComplement = await axios.get(urlComplement);
+       var { data } = resComplement;
+       setPostsComplement(data);
+ 
+     } catch (error) {
+       console.log(error)
+     };
+   };
+   useEffect(() => {
+     getPosts()
+   }, [])
+   //Função da API ----------------------
+ 
+  */
+
 
   // Navegação ----------------------
   const [fruitsPage, setFruitsPage] = useState(true);
@@ -31,29 +64,8 @@ export default function App() {
   const [pageFinalPage, setPageFinalPage] = useState(false);
   // Navegação ----------------------
 
-  //Função para carregar API ----------------------
-  const getPosts = async () => {
-    try {
-      const resFruit = await axios.get(urlFruit);
-      var { data } = resFruit;
-      setPostsFruit(data);
 
-      const resSizeCup = await axios.get(urlSizeCup);
-      var { data } = resSizeCup;
-      setPostsSizeCup(data);
 
-      const resComplement = await axios.get(urlComplement);
-      var { data } = resComplement;
-      setPostsComplement(data);
-
-    } catch (error) {
-      console.log(error)
-    };
-  };
-  useEffect(() => {
-    getPosts()
-  }, [])
-  //Função da API ----------------------
 
 
   return (
