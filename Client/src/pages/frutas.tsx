@@ -15,6 +15,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
 });
 
 
+
 export default function Frutas({ postsFruit, setSizePage, setFruitsPage }) {
 
     const [open, setOpen] = useState(false);
