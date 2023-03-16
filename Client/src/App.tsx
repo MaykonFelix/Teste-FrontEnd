@@ -1,14 +1,11 @@
 /* import "./App.css" */
-import docTitle from "./components/Title";
-
-
 import { useEffect, useState } from "react";
 
+import docTitle from "./components/Title";
 import Frutas from "./pages/frutas"
 import Tamanho from "./pages/tamanho"
 import Complemento from "./pages/complemento"
 import Paginafinal from "./pages/pagefinal"
-
 import axios from "axios";
 
 
