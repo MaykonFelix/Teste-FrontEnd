@@ -1,3 +1,4 @@
+import './global.css'
 import { Home } from "./pages";
 
 import { TitleAnimation } from "./components";
