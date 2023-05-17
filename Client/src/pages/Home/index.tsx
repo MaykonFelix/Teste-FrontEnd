@@ -6,9 +6,15 @@ export const Home = () => {
       <div className={styles.container}>
         <h1 className="pb-8 text-pink-700">Escolha a Fruta</h1>
         <ul>
-          <li>morango</li>
+          <li>
+            morango <button>+</button>
+          </li>
+
           <li>kiwi</li>
+          <button>Adicionar</button>
+
           <li>manga</li>
+          <button>Adicionar</button>
         </ul>
       </div>
     </>
