@@ -6,15 +6,12 @@ export const Home = () => {
     <>
       <div className={styles.container}>
         <h1>Escolha a Fruta</h1>
-        <Button fruit="Morando" />
-        <Button fruit="Kiwi" />
+        <Button fruit="Morando" img="🍓" id={1}/>
+        <Button fruit="Kiwi" img="🥝" id={2}/>
+        <Button fruit="Banana" img="🍌"id={3} />
       </div>
     </>
   );
 };
 
-// <div className="bg-slate-100 w-screen h-screen flex flex-col justify-center items-center">
-// <div className="shadow-lg shadow-pink-500/30 hover:bg-pink-200/20 duration-500 text-slate-500 w-[35rem] h-screen rounded-lg m-2 justify-center items-center flex flex-col">
-//   <h1 className="pb-8 text-pink-700">Escolha a Fruta</h1>
-//   <div className="flex">
-//     <div className="flex flex-col">
+
