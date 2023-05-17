@@ -1,21 +1,13 @@
 import styles from "./index.module.css";
+import { Button } from "../../components";
 
 export const Home = () => {
   return (
     <>
       <div className={styles.container}>
-        <h1 className="pb-8 text-pink-700">Escolha a Fruta</h1>
-        <ul>
-          <li>
-            morango <button>+</button>
-          </li>
-
-          <li>kiwi</li>
-          <button>Adicionar</button>
-
-          <li>manga</li>
-          <button>Adicionar</button>
-        </ul>
+        <h1>Escolha a Fruta</h1>
+        <Button fruit="Morando" />
+        <Button fruit="Kiwi" />
       </div>
     </>
   );

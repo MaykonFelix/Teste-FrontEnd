@@ -1,6 +1,16 @@
+import styles from './Button.module.css'
 
-export const Button = () => {
-
-    return (<button>Teste</button>)
+interface ButtonType {
+    fruit: string
 }
 
+export const Button = ({fruit = "Falta Fruta"}:ButtonType) => {
+  return (
+    <>
+      <button className={styles.container}>
+        <p>{fruit}</p>
+        <p>+</p>
+      </button>
+    </>
+  );
+};

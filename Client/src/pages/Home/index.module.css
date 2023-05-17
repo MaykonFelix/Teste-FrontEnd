@@ -12,8 +12,3 @@
 h1 {
   color: #be185d;
 }
-
-ul {
-  display: flex;
-  flex-direction: column;
-}
