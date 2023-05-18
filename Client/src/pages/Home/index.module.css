@@ -4,7 +4,7 @@
   width: 400px;
   height: 600px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   border-radius: 20px;
   box-shadow: 5px 6px 5px 4px rgba(0, 0, 0, 0.1);
 }

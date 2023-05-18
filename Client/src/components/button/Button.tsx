@@ -1,22 +1,29 @@
-import { Fragment } from "react";
+import React, { ButtonHTMLAttributes, MouseEventHandler, ReactNode } from "react";
+
 import styles from "./Button.module.css";
 
-interface ButtonType {
-  fruit: string;
-  img: string;
-  id: number;
+interface ButtonType extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: string | ReactNode;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  theme?: "primary" | "secondary";
+  className?: string;
 }
 
 export const Button = ({
-  fruit = "Falta Fruta",
-  img = "falta imagem",
-  id = 0,
+  children,
+  "aria-label": ariaLabel,
+  onClick,
+  theme = "primary",
+  className = "",
 }: ButtonType) => {
   return (
-    <Fragment key={id}>
-      <button className={styles.container}>
-        <p>{fruit}</p> <p>{img}</p>
-      </button>
-    </Fragment>
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={ariaLabel}
+      className={`${styles.btn} ${styles[`btn-${theme}`]} ${className}`}
+    >
+      {children}
+    </button>
   );
 };
