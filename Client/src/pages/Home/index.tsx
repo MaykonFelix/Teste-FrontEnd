@@ -1,7 +1,15 @@
-import styles from "./index.module.css";
+import { useState } from "react";
+
 import { Button } from "../../components";
 
+import styles from "./index.module.css";
+
+
+
 export const Home = () => {
+
+const [choseFruit, setChoseFruit ] = useState()
+
   return (
     <>
       <div className={styles.container}>
@@ -13,5 +21,3 @@ export const Home = () => {
     </>
   );
 };
-
-
