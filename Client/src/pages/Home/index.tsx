@@ -5,8 +5,8 @@ import { Button } from "../../components";
 import styles from "./index.module.css";
 
 export const Home = () => {
-  const [choseFruit, setChoseFruit] = useState("Sem Fruta");
-
+  const [choseFruit, setChoseFruit] = useState("");
+  console.log(choseFruit);
 
   return (
     <>
@@ -14,28 +14,33 @@ export const Home = () => {
         <div>
           <h1>Escolha a Fruta</h1>
         </div>
-        <div>
-          <Button onClick={() => setChoseFruit("morango")}>
+        <div className={styles.containerBtn}>
+          <Button onClick={() => setChoseFruit("Morango 🍓")}>
             <p>Morango</p> <p>🍓</p>
           </Button>
+          <Button onClick={() => setChoseFruit("Kiwi 🥝")}>
+            <p>Kiwi</p> <p>🥝</p>
+          </Button>
+          <Button onClick={() => setChoseFruit("Banana 🍌")}>
+            <p>Banana</p> <p>🍌</p>
+          </Button>
+        </div>
 
-          {/* <Button
-            fruit="Kiwi"
-            img="🥝"
-            id={2}
-            onClick={() => setChoseFruit("Kiwi")}
-          />
-          <Button
-            fruit="Banana"
-            img="🍌"
-            id={3}
-            onClick={() => setChoseFruit("Banana")}
-          /> */}
-        </div>
-        <div>
-          <h1>Fruta Escolhida</h1>
-          <p>{choseFruit}</p>
-        </div>
+        {choseFruit === "" ? null : (
+          <div style={{ display: "flex", flexDirection:"column", alignItems: "center", justifyContent:"center" }}>
+            <div style={{ display: "flex", gap: "20px" }}>
+              <h3>Fruta Escolhida</h3>
+              <p>{choseFruit}</p>
+              <button
+                style={{ border: "none", fontWeight: "bold" }}
+                onClick={() => setChoseFruit("")}
+              >
+                x
+              </button>
+            </div>
+            <button>Continuar</button>
+          </div>
+        )}
       </div>
     </>
   );
