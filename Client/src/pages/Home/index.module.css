@@ -30,14 +30,16 @@ hr {
 }
 
 .choiseFruit {
-  display: flex;
-  flex-direction: column;
-
+height: 110px;
   align-items: center;
   justify-content: space-around;
 }
 .choiseFruit div {
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+
 }
 
 .choiseFruit button {

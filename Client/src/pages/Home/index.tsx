@@ -16,7 +16,7 @@ export const Home = () => {
 
   return (
     <>
-    main
+      main
       <main className={styles.conteiner}>
         <h6>FAÇA SEU PEDIDO</h6>
         <div className={styles.container}>
@@ -42,23 +42,28 @@ export const Home = () => {
 
         <hr />
 
-        {choseFruit === "" ? null : (
-          <div className={styles.choiseFruit}>
-            <div>
-              <h4>
-                Fruta Escolhida: <em>{choseFruit}</em>
-              </h4>
-              <button onClick={() => setChoseFruit("")}>X</button>
-            </div>
+        <div className={styles.choiseFruit}>
+          {choseFruit === "" ? null : (
+           
+            <>
+              <div>
+                <h4>
+                  Fruta Escolhida: <em>{choseFruit}</em>
+                </h4>
+                <button onClick={() => setChoseFruit("")}>X</button>
+              </div>
 
-            <div>
-              <Button onClick={() => setChoseFruit("Banana 🍌")}>
-                <p>Continuar</p>
-                <p>👉</p>
-              </Button>
-            </div>
-          </div>
-        )}
+              <div>
+                <Button onClick={() => setChoseFruit("Banana 🍌")}>
+                  <p>Continuar</p>
+                  <p>👉</p>
+                </Button>
+              </div>
+            </>
+
+            
+          )}
+        </div>
 
         {choseFruit === "" ? null : (
           <>
