@@ -16,6 +16,7 @@ export const Home = () => {
 
   return (
     <>
+    main
       <main className={styles.conteiner}>
         <h6>FAÇA SEU PEDIDO</h6>
         <div className={styles.container}>

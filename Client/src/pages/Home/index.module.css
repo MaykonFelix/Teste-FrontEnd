@@ -9,7 +9,7 @@ main {
 
 .container {
   padding: 20px 50px;
-  height: auto;
+  height: 350px;
 
   border: 1px solid var(--pink-500);
   border-radius: 2px;
