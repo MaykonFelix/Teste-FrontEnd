@@ -16,24 +16,27 @@ export const Home = () => {
 
   return (
     <>
-      <div className={styles.container}>
-        <div>
-          <h1>Escolha a Fruta</h1>
-          <hr />
-        </div>
+      <main className={styles.conteiner}>
+        <h6>FAÇA SEU PEDIDO</h6>
+        <div className={styles.container}>
+          <div>
+            <h1>Escolha a Fruta</h1>
+            <hr />
+          </div>
 
-        <div className={styles.containerBtn}>
-          {fruit.map((itens) => {
-            return (
-              <Button
-                key={itens.id}
-                onClick={() => setChoseFruit(itens.name + itens.img)}
-              >
-                <p>{itens.name}</p>
-                <p>{itens.img}</p>
-              </Button>
-            );
-          })}
+          <div className={styles.containerBtn}>
+            {fruit.map((itens) => {
+              return (
+                <Button
+                  key={itens.id}
+                  onClick={() => setChoseFruit(itens.name + itens.img)}
+                >
+                  <p>{itens.name}</p>
+                  <p>{itens.img}</p>
+                </Button>
+              );
+            })}
+          </div>
         </div>
 
         <hr />
@@ -68,7 +71,7 @@ export const Home = () => {
             </div>
           </>
         )}
-      </div>
+      </main>
     </>
   );
 };
