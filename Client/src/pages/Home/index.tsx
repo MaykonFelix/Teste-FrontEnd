@@ -13,21 +13,33 @@ export const Home = () => {
       <div className={styles.container}>
         <div>
           <h1>Escolha a Fruta</h1>
+          <hr />
         </div>
         <div className={styles.containerBtn}>
           <Button onClick={() => setChoseFruit("Morango 🍓")}>
-            <p>Morango</p> <p>🍓</p>
+            <p>Morango</p>
+            <p>🍓</p>
           </Button>
           <Button onClick={() => setChoseFruit("Kiwi 🥝")}>
-            <p>Kiwi</p> <p>🥝</p>
+            <p>Kiwi</p>
+            <p>🥝</p>
           </Button>
           <Button onClick={() => setChoseFruit("Banana 🍌")}>
-            <p>Banana</p> <p>🍌</p>
+            <p>Banana</p>
+            <p>🍌</p>
           </Button>
         </div>
+        <hr />
 
         {choseFruit === "" ? null : (
-          <div style={{ display: "flex", flexDirection:"column", alignItems: "center", justifyContent:"center" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <div style={{ display: "flex", gap: "20px" }}>
               <h3>Fruta Escolhida</h3>
               <p>{choseFruit}</p>
@@ -38,7 +50,10 @@ export const Home = () => {
                 x
               </button>
             </div>
-            <button>Continuar</button>
+          <Button onClick={() => setChoseFruit("Banana 🍌")}>
+            <p>Continuar</p>
+            <p>👉</p>
+          </Button>
           </div>
         )}
       </div>
