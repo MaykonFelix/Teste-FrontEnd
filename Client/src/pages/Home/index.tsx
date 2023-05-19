@@ -22,7 +22,6 @@ export const Home = () => {
           <hr />
         </div>
 
-
         <div className={styles.containerBtn}>
           {fruit.map((itens) => {
             return (
@@ -64,20 +63,8 @@ export const Home = () => {
               <div>
                 <p>Fruta</p>
                 <p>{choseFruit}</p>
-                <button>X</button>
+                <button onClick={() => setChoseFruit("")}>X</button>
               </div>
-              {/* 
-              <div>
-                <p>Fruta</p>
-                <p>{choseFruit}</p>
-                <button>X</button>
-              </div>
-
-              <div>
-                <p>Fruta</p>
-                <p>{choseFruit}</p>
-                <button>X</button>
-              </div> */}
             </div>
           </>
         )}
