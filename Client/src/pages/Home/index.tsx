@@ -34,9 +34,12 @@ export const Home = () => {
         {choseFruit === "" ? null : (
           <div className={styles.choiseFruit}>
             <div>
-              <h4>Fruta Escolhida: <em>{choseFruit}</em></h4>
+              <h4>
+                Fruta Escolhida: <em>{choseFruit}</em>
+              </h4>
               <button onClick={() => setChoseFruit("")}>X</button>
             </div>
+
             <div>
               <Button onClick={() => setChoseFruit("Banana 🍌")}>
                 <p>Continuar</p>

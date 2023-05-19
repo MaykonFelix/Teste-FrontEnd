@@ -30,12 +30,11 @@ hr {
   align-items: center;
   justify-content: space-around;
 }
-.choiseFruit > div {
+.choiseFruit div {
   display: flex;
-  height: 30px;
 }
 
-.choiseFruit > button {
+.choiseFruit button {
   display: flex;
   border: none;
   font-weight: 600;
@@ -43,12 +42,13 @@ hr {
   padding: 5px;
   margin-left: 10px;
   border-radius: 5px;
+  border: 1px solid var(--pink-500);
 }
 
-.choiseFruit > button:hover {
-  background-color: #a6a6a6;
-  font-weight: 800;
-
+.choiseFruit button:hover {
+  background-color: var(--pink-500);
+  color: var(--white);
+  border: 1px solid var(--white);
 }
 
 .footer {
