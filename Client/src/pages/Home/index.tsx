@@ -4,6 +4,12 @@ import { Button } from "../../components";
 
 import styles from "./index.module.css";
 
+const fruit = [
+  { id: 1, name: "Morango", img: "🍓" },
+  { id: 2, name: "Kiwi", img: "🍓" },
+  { id: 3, name: "Banana", img: "🍓" },
+];
+
 export const Home = () => {
   const [choseFruit, setChoseFruit] = useState("");
   console.log(choseFruit);
@@ -15,20 +21,22 @@ export const Home = () => {
           <h1>Escolha a Fruta</h1>
           <hr />
         </div>
+
+
         <div className={styles.containerBtn}>
-          <Button onClick={() => setChoseFruit("Morango 🍓")}>
-            <p>Morango</p>
-            <p>🍓</p>
-          </Button>
-          <Button onClick={() => setChoseFruit("Kiwi 🥝")}>
-            <p>Kiwi</p>
-            <p>🥝</p>
-          </Button>
-          <Button onClick={() => setChoseFruit("Banana 🍌")}>
-            <p>Banana</p>
-            <p>🍌</p>
-          </Button>
+          {fruit.map((itens) => {
+            return (
+              <Button
+                key={itens.id}
+                onClick={() => setChoseFruit(itens.name + itens.img)}
+              >
+                <p>{itens.name}</p>
+                <p>{itens.img}</p>
+              </Button>
+            );
+          })}
         </div>
+
         <hr />
 
         {choseFruit === "" ? null : (
