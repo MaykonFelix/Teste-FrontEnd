@@ -1,29 +1,30 @@
 /* import "./App.css" */
 import { useEffect, useState } from "react";
 
-import Frutas from "./pages/frutas"
-import Tamanho from "./pages/tamanho"
-import Complemento from "./pages/Old/complemento"
+import Frutas from "./pages/frutas";
+import Tamanho from "./pages/tamanho";
+import Complemento from "./pages/Old/complemento";
 import axios from "axios";
-
-
-
-
-
 
 export default function App() {
   docTitle(); //Titulo Animado
 
   // Pegando API ----------------------
-  const [urlFruit, setUrlFrui] = useState('https://mock-test-virid.vercel.app/fruits');
-  const [urlSizeCup, setUrlSizeCup] = useState('https://mock-test-virid.vercel.app/sizecup');
-  const [urlComplement, setUrlComplement] = useState('https://mock-test-virid.vercel.app/complements');
+  const [urlFruit, setUrlFrui] = useState(
+    "https://mock-test-virid.vercel.app/fruits"
+  );
+  const [urlSizeCup, setUrlSizeCup] = useState(
+    "https://mock-test-virid.vercel.app/sizecup"
+  );
+  const [urlComplement, setUrlComplement] = useState(
+    "https://mock-test-virid.vercel.app/complements"
+  );
   // Pegando API ----------------------
 
   // Manipulando API ----------------------
-  const [postsFruit, setPostsFruit] = useState([])
-  const [postsSizeCup, setPostsSizeCup] = useState([])
-  const [postsComplement, setPostsComplement] = useState([])
+  const [postsFruit, setPostsFruit] = useState([]);
+  const [postsSizeCup, setPostsSizeCup] = useState([]);
+  const [postsComplement, setPostsComplement] = useState([]);
   // Manipulando API ----------------------
 
   // Navegação ----------------------
@@ -47,42 +48,35 @@ export default function App() {
       const resComplement = await axios.get(urlComplement);
       var { data } = resComplement;
       setPostsComplement(data);
-
     } catch (error) {
-      console.log(error)
-    };
+      console.log(error);
+    }
   };
   useEffect(() => {
-    getPosts()
-  }, [])
+    getPosts();
+  }, []);
   //Função da API ----------------------
-
 
   return (
     <>
-
       {fruitsPage && (
         <Frutas
           postsFruit={postsFruit}
           setFruitsPage={setFruitsPage}
           setSizePage={setSizePage}
           setcomplementoPage={setcomplementoPage}
-
         />
       )}
 
-      {sizePage && <Tamanho
-        postsSizeCup={postsSizeCup}
-        setSizePage={setSizePage}
-        setcomplementoPage={setcomplementoPage}
-      />}
+      {sizePage && (
+        <Tamanho
+          postsSizeCup={postsSizeCup}
+          setSizePage={setSizePage}
+          setcomplementoPage={setcomplementoPage}
+        />
+      )}
 
-      {complementoPage && <Complemento
-        postsComplement={postsComplement}
-      />}
-
-
-
+      {complementoPage && <Complemento postsComplement={postsComplement} />}
     </>
-  )
+  );
 }

@@ -1,3 +1,12 @@
+:root {
+  --white: #fff;
+  --white-100: #ffeee2;
+  --orange-600: #ff862c;
+  --darkRed-800: #3a0930;
+  --oceanGreen-500: #006059;
+  --pink-500: #be185d;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +18,8 @@ body {
   background-color: #f1f5f9;
   display: flex;
 
- align-items: center;
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100vh;
 }

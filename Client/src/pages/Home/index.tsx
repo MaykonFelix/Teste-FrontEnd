@@ -50,10 +50,35 @@ export const Home = () => {
                 x
               </button>
             </div>
-          <Button onClick={() => setChoseFruit("Banana 🍌")}>
-            <p>Continuar</p>
-            <p>👉</p>
-          </Button>
+            <Button onClick={() => setChoseFruit("Banana 🍌")}>
+              <p>Continuar</p>
+              <p>👉</p>
+            </Button>
+          </div>
+        )}
+
+        {choseFruit === "" ? null : (
+          <div className={styles.footer}>
+            <div>
+              {" "}
+              <hr />
+              <p>Fruta</p>
+              <button>{choseFruit} X</button>
+            </div>
+
+            <div>
+              {" "}
+              <hr />
+              <p>Tamanho</p>
+              <button>{choseFruit} X</button>
+            </div>
+
+            <div>
+              {" "}
+              <hr />
+              <p>Adicional</p>
+              <button>{choseFruit} X</button>
+            </div>
           </div>
         )}
       </div>
