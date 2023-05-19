@@ -32,54 +32,43 @@ export const Home = () => {
         <hr />
 
         {choseFruit === "" ? null : (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <div style={{ display: "flex", gap: "20px" }}>
-              <h3>Fruta Escolhida</h3>
-              <p>{choseFruit}</p>
-              <button
-                style={{ border: "none", fontWeight: "bold" }}
-                onClick={() => setChoseFruit("")}
-              >
-                x
-              </button>
+          <div className={styles.choiseFruit}>
+            <div>
+              <h4>Fruta Escolhida: <em>{choseFruit}</em></h4>
+              <button onClick={() => setChoseFruit("")}>X</button>
             </div>
-            <Button onClick={() => setChoseFruit("Banana 🍌")}>
-              <p>Continuar</p>
-              <p>👉</p>
-            </Button>
+            <div>
+              <Button onClick={() => setChoseFruit("Banana 🍌")}>
+                <p>Continuar</p>
+                <p>👉</p>
+              </Button>
+            </div>
           </div>
         )}
 
         {choseFruit === "" ? null : (
-          <div className={styles.footer}>
-            <div>
-              {" "}
-              <hr />
-              <p>Fruta</p>
-              <button>{choseFruit} X</button>
-            </div>
+          <>
+            <hr />
+            <div className={styles.footer}>
+              <div>
+                <p>Fruta</p>
+                <p>{choseFruit}</p>
+                <button>X</button>
+              </div>
+              {/* 
+              <div>
+                <p>Fruta</p>
+                <p>{choseFruit}</p>
+                <button>X</button>
+              </div>
 
-            <div>
-              {" "}
-              <hr />
-              <p>Tamanho</p>
-              <button>{choseFruit} X</button>
+              <div>
+                <p>Fruta</p>
+                <p>{choseFruit}</p>
+                <button>X</button>
+              </div> */}
             </div>
-
-            <div>
-              {" "}
-              <hr />
-              <p>Adicional</p>
-              <button>{choseFruit} X</button>
-            </div>
-          </div>
+          </>
         )}
       </div>
     </>

@@ -23,7 +23,56 @@ hr {
   background-color: var(--pink-500);
 }
 
+.choiseFruit {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: space-around;
+}
+.choiseFruit > div {
+  display: flex;
+  height: 30px;
+}
+
+.choiseFruit > button {
+  display: flex;
+  border: none;
+  font-weight: 600;
+  align-items: center;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.choiseFruit > button:hover {
+  background-color: #a6a6a6;
+  font-weight: 800;
+
+}
+
 .footer {
   display: flex;
-  text-align: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer button {
+  font-style: normal;
+  font-weight: 500;
+  transition: opacity 0.3s;
+  cursor: pointer;
+  border: none;
+}
+
+.footer p {
+  font-size: 0.9rem;
 }
