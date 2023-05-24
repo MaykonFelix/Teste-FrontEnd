@@ -43,7 +43,6 @@ export const Home = () => {
 
         <div className={styles.choiseFruit}>
           {choseFruit === "" ? null : (
-           
             <>
               <div>
                 <h4>
@@ -59,8 +58,6 @@ export const Home = () => {
                 </Button>
               </div>
             </>
-
-            
           )}
         </div>
 
